@@ -1,0 +1,91 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<style>
+/* Шрифт и цвета сняты с 100med.ru (ProximaNova, палитра сайта). Шрифт подгружается с сайта, в репозиторий не копируется (лицензия). */
+@font-face{font-family:PN;font-weight:400;src:url(https://100med.ru/local/templates/100med/builds/prod/font/ProximaNova-Regular.woff2) format("woff2")}
+@font-face{font-family:PN;font-weight:600;src:url(https://100med.ru/local/templates/100med/builds/prod/font/ProximaNova-Semibold.woff2) format("woff2")}
+@font-face{font-family:PN;font-weight:700;src:url(https://100med.ru/local/templates/100med/builds/prod/font/ProximaNova-Bold.woff2) format("woff2")}
+:root{--navy:#1B1455;--blue:#6187FF;--blue-d:#354092;--pink:#E90055;--bg:#EDF0F5;--lav:#EAECFC}
+*{box-sizing:border-box;margin:0}
+body{font-family:PN,Arial,sans-serif;background:#999}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;padding:72px;display:flex;flex-direction:column;background:var(--bg);color:var(--navy)}
+.card{position:relative;flex:1;border-radius:64px;padding:72px 64px;display:flex;flex-direction:column;overflow:hidden}
+.grad{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-d) 100%);color:#fff}
+.white{background:#fff}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;height:72px}
+.top img{height:72px}
+.pager{display:flex;gap:12px}.pager i{width:16px;height:16px;border-radius:50%;border:2px solid var(--blue)}.pager i.on{background:var(--blue)}
+.badge{align-self:flex-start;background:#fff;color:var(--pink);font-weight:600;font-size:34px;padding:14px 30px;border-radius:50px}
+.badge.pinkbg{background:var(--pink);color:#fff}
+h1{font-weight:600;font-size:100px;line-height:1.02;margin-top:44px;letter-spacing:-1px;position:relative;z-index:1}
+h2{font-weight:600;font-size:70px;line-height:1.08;letter-spacing:-.5px}
+p{font-size:40px;line-height:1.35;margin-top:36px;position:relative;z-index:1}
+.wm{position:absolute;font-weight:700;font-size:760px;line-height:1;color:rgba(255,255,255,.08);right:-120px;bottom:-120px;letter-spacing:-30px}
+.btn{align-self:flex-start;background:var(--pink);color:#fff;font-weight:600;font-size:44px;padding:34px 60px;border-radius:80px;margin-top:auto;position:relative;z-index:1}
+.btn.w{background:#fff;color:var(--blue)}
+.vs{display:flex;gap:28px;margin-top:44px;align-items:flex-start}
+.vs div{flex:1;border-radius:44px;padding:44px 40px;font-size:36px;line-height:1.3}
+.vs b{display:block;font-size:56px;font-weight:600;margin-bottom:16px}
+.v1{background:var(--lav)}.v2{background:var(--lav)}
+.no{color:var(--pink);font-weight:600}
+.row{display:flex;gap:28px;align-items:flex-start;background:var(--lav);border-radius:40px;padding:36px 40px;margin-top:24px;font-size:36px;line-height:1.3}
+.row .ic{flex:none;width:64px;height:64px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;font-size:34px;display:flex;align-items:center;justify-content:center}
+.row b{font-weight:600}
+.disc{font-size:30px;line-height:1.3;color:var(--navy);margin-top:28px;padding:0 8px}
+.disc.big{font-weight:600;font-size:34px;text-transform:uppercase}
+.swipe{position:absolute;right:64px;bottom:64px;width:120px;height:120px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;z-index:1}
+</style></head><body>
+
+<section class="s" id="s1"><div class="top"><img src="logo.svg"><div class="pager"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="card grad"><div class="wm">100</div>
+<div class="badge">Врач отвечает</div>
+<h1>Антибиотик при простуде: поможет или нет?</h1>
+<p>Разбираем самый частый вопрос сезона простуд</p>
+<div class="swipe"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#6187FF" stroke-width="2" stroke-linecap="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></div>
+</div></section>
+
+<section class="s" id="s2"><div class="top"><img src="logo.svg"><div class="pager"><i></i><i class="on"></i><i></i><i></i><i></i><i></i></div></div>
+<div class="card white">
+<h2>Простуда и грипп чаще всего вызваны вирусами</h2>
+<p>А антибиотики создавались для борьбы с бактериями.</p>
+<div class="vs"><div class="v1"><b>Вирусы</b>ОРВИ, грипп, большинство простуд<span class="no" style="display:block;margin-top:24px">Антибиотик не действует</span></div>
+<div class="v2"><b>Бактерии</b>Например, некоторые ангины, пневмонии, отиты<span style="display:block;margin-top:24px;color:var(--blue);font-weight:600">Антибиотик может понадобиться — решает врач</span></div></div>
+</div></section>
+
+<section class="s" id="s3"><div class="top"><img src="logo.svg"><div class="pager"><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div></div>
+<div class="card white">
+<h2>Что будет, если пить «на всякий случай»</h2>
+<div style="margin-top:32px"></div>
+<div class="row"><div class="ic">1</div><div><b>Не ускорит выздоровление</b> при вирусной инфекции</div></div>
+<div class="row"><div class="ic">2</div><div><b>Возможны побочные эффекты:</b> со стороны желудка и кишечника, аллергические реакции</div></div>
+<div class="row"><div class="ic">3</div><div><b>Растёт устойчивость бактерий:</b> когда антибиотик действительно понадобится, он может сработать хуже</div></div>
+</div></section>
+
+<section class="s" id="s4"><div class="top"><img src="logo.svg"><div class="pager"><i></i><i></i><i></i><i class="on"></i><i></i><i></i></div></div>
+<div class="card grad"><div class="wm">?</div>
+<div class="badge">Важно</div>
+<h1 style="font-size:84px">Когда антибиотик всё-таки нужен?</h1>
+<p>Если к вирусу присоединилась бактериальная инфекция. Определить это может только врач — по осмотру и, при необходимости, анализам.</p>
+<p style="font-weight:600">Решение — за врачом, а не за аптечной полкой.</p>
+</div></section>
+
+<section class="s" id="s5"><div class="top"><img src="logo.svg"><div class="pager"><i></i><i></i><i></i><i></i><i class="on"></i><i></i></div></div>
+<div class="card white">
+<h2>Когда стоит обратиться к врачу</h2>
+<div style="margin-top:24px"></div>
+<div class="row"><div class="ic">!</div><div>Температура выше 38 °C держится больше 3 дней</div></div>
+<div class="row"><div class="ic">!</div><div>Стало лучше — а потом снова хуже</div></div>
+<div class="row"><div class="ic">!</div><div>Одышка, боль в груди, сильная боль в ухе или горле</div></div>
+<div class="row"><div class="ic">!</div><div>Болеет ребёнок до года, пожилой человек или человек с хроническими заболеваниями</div></div>
+</div></section>
+
+<section class="s" id="s6"><div class="top"><img src="logo.svg"><div class="pager"><i></i><i></i><i></i><i></i><i></i><i class="on"></i></div></div>
+<div class="card grad"><div class="wm">100</div>
+<div class="badge">Телемедицина и приём в клинике</div>
+<h1 style="font-size:84px">Сомневаетесь, нужен ли антибиотик?</h1>
+<p>Спросите врача-терапевта 100med — очно или онлайн, не выходя из дома.</p>
+<div class="btn">Записаться онлайн: 100med.ru</div>
+</div>
+<div class="disc big">Имеются противопоказания. Необходима консультация специалиста.</div>
+<div class="disc">Материал носит информационный характер и не заменяет консультацию врача.</div>
+</section>
+</body></html>
