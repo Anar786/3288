@@ -22,38 +22,38 @@ for k in range(int(DUR/clen)+1):
     for m in ch[1:]:
         for det in (-0.08,0.08):
             fr=f(m+12)*(1+det/100*12)
-            sig+=np.sin(2*np.pi*fr*t)+0.25*np.sin(4*np.pi*fr*t+0.3)
-    add(smooth(sig*e,6),t0,0.022,pan=0.0)
+            sig+=np.sin(2*np.pi*fr*t)+0.5*np.sin(4*np.pi*fr*t+0.3)+0.25*np.sin(6*np.pi*fr*t+0.7)
+    add(smooth(sig*e,3),t0,0.045,pan=0.0)
     # bass
     for b in range(0,8,2):
         if t0+b*B>=DUR: break
         n2=int(B*1.8*SR); tt=np.arange(n2)/SR
-        bs=np.sin(2*np.pi*f(ch[0]-12)*tt)*env(n2,0.01,0.9)
-        add(bs,t0+b*B,0.16 if t0>=3.5 else 0.08)
+        fb=f(ch[0]); bs=(np.sin(2*np.pi*fb*tt)+0.5*np.sin(4*np.pi*fb*tt)+0.3*np.sin(6*np.pi*fb*tt))*env(n2,0.01,0.6)
+        add(bs,t0+b*B,0.07 if t0>=3.5 else 0.04)
 # pluck arpeggio (8ths)
 pat=[1,2,3,4,3,2,4,3]
 for i in range(int(DUR/(B/2))):
-    t0=i*B/2; ch=chords[int(t0//clen)%4]; m=ch[pat[i%8]]+12
+    t0=i*B/2; ch=chords[int(t0//clen)%4]; m=ch[pat[i%8]]+24
     n=int(0.6*SR); t=np.arange(n)/SR
-    s=(np.sin(2*np.pi*f(m)*t)+0.3*np.sin(4*np.pi*f(m)*t))*env(n,0.004,0.18)
-    add(s,t0,0.07,pan=0.35 if i%2 else -0.35)
+    s=(np.sin(2*np.pi*f(m)*t)+0.4*np.sin(4*np.pi*f(m)*t)+0.15*np.sin(6*np.pi*f(m)*t))*env(n,0.003,0.22)
+    add(s,t0,0.16,pan=0.35 if i%2 else -0.35)
 # drums (после хука)
 for i in range(int(DUR/B)):
     t0=i*B
     if t0<3.5 or t0>DUR-1.8: continue
     if i%2==0:
-        n=int(0.35*SR); t=np.arange(n)/SR; fr=45+80*np.exp(-t/0.04)
-        add(np.sin(2*np.pi*np.cumsum(fr)/SR)*env(n,0.002,0.12),t0,0.32)
+        n=int(0.35*SR); t=np.arange(n)/SR; fr=70+160*np.exp(-t/0.03)
+        add(np.sin(2*np.pi*np.cumsum(fr)/SR)*env(n,0.002,0.09),t0,0.18); add(rng.standard_normal(int(0.004*SR)),t0,0.05)
     else:
         n=int(0.25*SR); nz=rng.standard_normal(n); nz=nz-smooth(nz,4)  # грубый highpass
-        add(smooth(nz,2)*env(n,0.003,0.07),t0,0.06)
+        add(smooth(nz,2)*env(n,0.003,0.07),t0,0.08)
     n=int(0.06*SR); nz=rng.standard_normal(n); nz=nz-smooth(nz,3)
-    add(nz*env(n,0.001,0.015),t0+B/2,0.035,pan=0.3)
+    add(nz*env(n,0.001,0.015),t0+B/2,0.06,pan=0.3)
 # SFX
-def whoosh(t0,dur=0.5,g=0.10):
+def whoosh(t0,dur=0.5,g=0.16):
     n=int(dur*SR); t=np.arange(n)/SR; nz=rng.standard_normal(n)
     e=np.sin(np.pi*t/dur)**2; add(smooth(nz,10)*e,t0-dur*0.6,g)
-def tick(t0,m=84,g=0.10):
+def tick(t0,m=84,g=0.18):
     n=int(0.25*SR); t=np.arange(n)/SR; add(np.sin(2*np.pi*f(m)*t)*env(n,0.002,0.05),t0,g)
 def pop(t0,g=0.2):
     n=int(0.2*SR); t=np.arange(n)/SR; fr=300+600*np.exp(-t/0.02); add(np.sin(2*np.pi*np.cumsum(fr)/SR)*env(n,0.002,0.06),t0,g)
