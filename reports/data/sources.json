@@ -1,0 +1,528 @@
+{
+ "rows": [
+  {
+   "source": "Pryamoj_zvonok_Osnovnoj",
+   "medium": "(none)",
+   "channel": "Прямые звонки и без источника",
+   "branch": "Не определён (общий номер)",
+   "leads": 190,
+   "calls": 190,
+   "requests": 0
+  },
+  {
+   "source": "Yandex_Karty_Lyubercy",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Люберцы",
+   "leads": 181,
+   "calls": 173,
+   "requests": 8
+  },
+  {
+   "source": "yandex",
+   "medium": "cpc",
+   "channel": "Платная реклама",
+   "branch": "Не определён (общий номер)",
+   "leads": 95,
+   "calls": 66,
+   "requests": 29
+  },
+  {
+   "source": "Google_Karty_Lyubercy",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Люберцы",
+   "leads": 88,
+   "calls": 85,
+   "requests": 3
+  },
+  {
+   "source": "Yandex_Karty_Ramenskoe",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Раменское",
+   "leads": 66,
+   "calls": 65,
+   "requests": 1
+  },
+  {
+   "source": "seo_yandex",
+   "medium": "organic",
+   "channel": "SEO",
+   "branch": "Не определён (общий номер)",
+   "leads": 56,
+   "calls": 56,
+   "requests": 0
+  },
+  {
+   "source": "Yandex_Karty_Lytkarino",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Лыткарино",
+   "leads": 55,
+   "calls": 55,
+   "requests": 0
+  },
+  {
+   "source": "(direct)",
+   "medium": "(none)",
+   "channel": "Прямые звонки и без источника",
+   "branch": "Не определён (общий номер)",
+   "leads": 48,
+   "calls": 43,
+   "requests": 5
+  },
+  {
+   "source": "seo_google",
+   "medium": "organic",
+   "channel": "SEO",
+   "branch": "Не определён (общий номер)",
+   "leads": 44,
+   "calls": 44,
+   "requests": 0
+  },
+  {
+   "source": "yandex",
+   "medium": "cpc",
+   "channel": "Платная реклама",
+   "branch": "Люберцы",
+   "leads": 43,
+   "calls": 34,
+   "requests": 9
+  },
+  {
+   "source": "Osnovnoj_Rostelekom",
+   "medium": "(none)",
+   "channel": "Прямые звонки и без источника",
+   "branch": "Не определён (общий номер)",
+   "leads": 29,
+   "calls": 29,
+   "requests": 0
+  },
+  {
+   "source": "Yandex_Karty_Uhtomskaya",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Ухтомская",
+   "leads": 28,
+   "calls": 22,
+   "requests": 6
+  },
+  {
+   "source": "Poligrafiya_Lyubercy",
+   "medium": "poligrafiya",
+   "channel": "Офлайн-реклама",
+   "branch": "Люберцы",
+   "leads": 26,
+   "calls": 26,
+   "requests": 0
+  },
+  {
+   "source": "yandex",
+   "medium": "cpc",
+   "channel": "Платная реклама",
+   "branch": "Раменское",
+   "leads": 24,
+   "calls": 17,
+   "requests": 7
+  },
+  {
+   "source": "yandex_vizitka",
+   "medium": "cpc",
+   "channel": "Платная реклама",
+   "branch": "Не определён (общий номер)",
+   "leads": 19,
+   "calls": 19,
+   "requests": 0
+  },
+  {
+   "source": "Yandex_Karty_Kashin",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Кашин",
+   "leads": 19,
+   "calls": 19,
+   "requests": 0
+  },
+  {
+   "source": "Google_Karty_Lytkarino",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Лыткарино",
+   "leads": 16,
+   "calls": 16,
+   "requests": 0
+  },
+  {
+   "source": "yandex",
+   "medium": "cpc",
+   "channel": "Платная реклама",
+   "branch": "Лыткарино",
+   "leads": 15,
+   "calls": 13,
+   "requests": 2
+  },
+  {
+   "source": "Poligrafiya_vizitki_adminov_Ramenskoe",
+   "medium": "poligrafiya",
+   "channel": "Офлайн-реклама",
+   "branch": "Раменское",
+   "leads": 14,
+   "calls": 14,
+   "requests": 0
+  },
+  {
+   "source": "Pryamoj_zvonok_Lytkarino",
+   "medium": "(none)",
+   "channel": "Прямые звонки и без источника",
+   "branch": "Лыткарино",
+   "leads": 14,
+   "calls": 14,
+   "requests": 0
+  },
+  {
+   "source": "2GIS_Karty_Lyubercy",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Люберцы",
+   "leads": 13,
+   "calls": 13,
+   "requests": 0
+  },
+  {
+   "source": "Infodoctor_Lyubercy",
+   "medium": "agregatory",
+   "channel": "Агрегаторы и каталоги",
+   "branch": "Люберцы",
+   "leads": 12,
+   "calls": 12,
+   "requests": 0
+  },
+  {
+   "source": "google",
+   "medium": "organic",
+   "channel": "SEO",
+   "branch": "Не определён (общий номер)",
+   "leads": 12,
+   "calls": 0,
+   "requests": 12
+  },
+  {
+   "source": "Google_Karty_Kashin",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Кашин",
+   "leads": 11,
+   "calls": 11,
+   "requests": 0
+  },
+  {
+   "source": "yandex",
+   "medium": "organic",
+   "channel": "SEO",
+   "branch": "Не определён (общий номер)",
+   "leads": 10,
+   "calls": 0,
+   "requests": 10
+  },
+  {
+   "source": "Platnyj_trafik",
+   "medium": "cpc",
+   "channel": "Платная реклама",
+   "branch": "Не определён (общий номер)",
+   "leads": 9,
+   "calls": 9,
+   "requests": 0
+  },
+  {
+   "source": "yandex",
+   "medium": "cpc",
+   "channel": "Платная реклама",
+   "branch": "Кашин",
+   "leads": 8,
+   "calls": 7,
+   "requests": 1
+  },
+  {
+   "source": "Прямой мобильный Лыткарино",
+   "medium": "(none)",
+   "channel": "Прямые звонки и без источника",
+   "branch": "Лыткарино",
+   "leads": 7,
+   "calls": 7,
+   "requests": 0
+  },
+  {
+   "source": "2GIS_Karty_Ramenskoe",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Раменское",
+   "leads": 6,
+   "calls": 6,
+   "requests": 0
+  },
+  {
+   "source": "Yandex_Karty_Stomatologiya_Luberstsy",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Люберцы",
+   "leads": 6,
+   "calls": 6,
+   "requests": 0
+  },
+  {
+   "source": "Napopravku_Lyuberecy",
+   "medium": "agregatory",
+   "channel": "Агрегаторы и каталоги",
+   "branch": "Люберцы",
+   "leads": 5,
+   "calls": 5,
+   "requests": 0
+  },
+  {
+   "source": "Vk_socseti_Kashin",
+   "medium": "smm",
+   "channel": "Соцсети",
+   "branch": "Кашин",
+   "leads": 5,
+   "calls": 5,
+   "requests": 0
+  },
+  {
+   "source": "Doctu_Lytkarino",
+   "medium": "agregatory",
+   "channel": "Агрегаторы и каталоги",
+   "branch": "Лыткарино",
+   "leads": 4,
+   "calls": 4,
+   "requests": 0
+  },
+  {
+   "source": "vk_ads",
+   "medium": "cpc",
+   "channel": "Платная реклама",
+   "branch": "Не определён (общий номер)",
+   "leads": 4,
+   "calls": 4,
+   "requests": 0
+  },
+  {
+   "source": "Prodoktorov_Lyuberecy",
+   "medium": "agregatory",
+   "channel": "Агрегаторы и каталоги",
+   "branch": "Люберцы",
+   "leads": 4,
+   "calls": 4,
+   "requests": 0
+  },
+  {
+   "source": "Poligrafiya_Kesova_gora",
+   "medium": "poligrafiya",
+   "channel": "Офлайн-реклама",
+   "branch": "Кесова Гора",
+   "leads": 4,
+   "calls": 4,
+   "requests": 0
+  },
+  {
+   "source": "Napopravku_Ramenskoe",
+   "medium": "agregatory",
+   "channel": "Агрегаторы и каталоги",
+   "branch": "Раменское",
+   "leads": 4,
+   "calls": 4,
+   "requests": 0
+  },
+  {
+   "source": "Google_Karty_Uhtomskaya",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Ухтомская",
+   "leads": 3,
+   "calls": 3,
+   "requests": 0
+  },
+  {
+   "source": "Zoon_Lyubercy",
+   "medium": "agregatory",
+   "channel": "Агрегаторы и каталоги",
+   "branch": "Люберцы",
+   "leads": 3,
+   "calls": 3,
+   "requests": 0
+  },
+  {
+   "source": "Poligrafiya_Kashin",
+   "medium": "poligrafiya",
+   "channel": "Офлайн-реклама",
+   "branch": "Кашин",
+   "leads": 3,
+   "calls": 3,
+   "requests": 0
+  },
+  {
+   "source": "Yandex_Karty_Kesova_gora",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Кесова Гора",
+   "leads": 3,
+   "calls": 3,
+   "requests": 0
+  },
+  {
+   "source": "Vk_socseti_Ramenskoe",
+   "medium": "smm",
+   "channel": "Соцсети",
+   "branch": "Раменское",
+   "leads": 2,
+   "calls": 2,
+   "requests": 0
+  },
+  {
+   "source": "32top_Ramenskoe",
+   "medium": "agregatory",
+   "channel": "Агрегаторы и каталоги",
+   "branch": "Раменское",
+   "leads": 2,
+   "calls": 2,
+   "requests": 0
+  },
+  {
+   "source": "ya",
+   "medium": "cpc",
+   "channel": "Платная реклама",
+   "branch": "Не определён (общий номер)",
+   "leads": 2,
+   "calls": 0,
+   "requests": 2
+  },
+  {
+   "source": "google",
+   "medium": "organic",
+   "channel": "SEO",
+   "branch": "Лыткарино",
+   "leads": 2,
+   "calls": 0,
+   "requests": 2
+  },
+  {
+   "source": "ya",
+   "medium": "cpc",
+   "channel": "Платная реклама",
+   "branch": "Раменское",
+   "leads": 1,
+   "calls": 1,
+   "requests": 0
+  },
+  {
+   "source": "Vk_socseti_Lyubercy",
+   "medium": "smm",
+   "channel": "Соцсети",
+   "branch": "Люберцы",
+   "leads": 1,
+   "calls": 1,
+   "requests": 0
+  },
+  {
+   "source": "Napopravku_Lytkarino",
+   "medium": "agregatory",
+   "channel": "Агрегаторы и каталоги",
+   "branch": "Лыткарино",
+   "leads": 1,
+   "calls": 1,
+   "requests": 0
+  },
+  {
+   "source": "Poligrafiya_Uhtomskaya",
+   "medium": "poligrafiya",
+   "channel": "Офлайн-реклама",
+   "branch": "Ухтомская",
+   "leads": 1,
+   "calls": 1,
+   "requests": 0
+  },
+  {
+   "source": "32top_Lytkarino",
+   "medium": "agregatory",
+   "channel": "Агрегаторы и каталоги",
+   "branch": "Лыткарино",
+   "leads": 1,
+   "calls": 1,
+   "requests": 0
+  },
+  {
+   "source": "2GIS_Karty_Stomatologiya_Luberstsy",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Люберцы",
+   "leads": 1,
+   "calls": 1,
+   "requests": 0
+  },
+  {
+   "source": "2GIS_Karty_Lytkarino",
+   "medium": "geo",
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "branch": "Лыткарино",
+   "leads": 1,
+   "calls": 1,
+   "requests": 0
+  },
+  {
+   "source": "Outdoor_Ramenskoe",
+   "medium": "outdoor",
+   "channel": "Офлайн-реклама",
+   "branch": "Раменское",
+   "leads": 1,
+   "calls": 1,
+   "requests": 0
+  },
+  {
+   "source": "Napopravku_Kashin",
+   "medium": "agregatory",
+   "channel": "Агрегаторы и каталоги",
+   "branch": "Кашин",
+   "leads": 1,
+   "calls": 1,
+   "requests": 0
+  },
+  {
+   "source": "(нет данных)",
+   "medium": "(none)",
+   "channel": "Прямые звонки и без источника",
+   "branch": "Не определён (общий номер)",
+   "leads": 1,
+   "calls": 0,
+   "requests": 1
+  },
+  {
+   "source": "ya",
+   "medium": "cpc",
+   "channel": "Платная реклама",
+   "branch": "Люберцы",
+   "leads": 1,
+   "calls": 0,
+   "requests": 1
+  }
+ ],
+ "meta": [
+  {
+   "label": "leads_report.py",
+   "value": "#!/usr/bin/env python3\n\"\"\"Отчёт по лидам 100мед: Calltouch (звонки и заявки) + Яндекс Метрика (визиты).\n\nЗапуск:  python3 reports/leads_report.py 2026-11-16 2026-11-22\nНужны переменные окружения CALLTOUCH_SITE_ID, CALLTOUCH_TOKEN; доступ к Метрике\nдаёт прокси среды. Пишет агрегаты (без телефонов и ФИО) в reports/data/*.json.\n\nЛид = уникально-целевой звонок + уникально-целевая заявка (флаги Calltouch\nuniqTargetCall / uniqTargetRequest). Сравнение — с периодом той же длины до него.\n\"\"\"\nimport collections\nimport datetime as dt\nimport json\nimport os\nimport sys\nimport urllib.parse\nimport urllib.request\n\nCT = \"https://api.calltouch.ru/calls-service/RestAPI\"\nMETRIKA = \"https://api-metrika.yandex.net/stat/v1/data\"\nCOUNTER = 10180198  # 100med.ru\nOUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), \"data\")\n\nCHANNELS = {\n    \"geo\": \"Карты (Яндекс, Google, 2ГИС)\",\n    \"cpc\": \"Платная реклама\", \"cpa\": \"Платная реклама\",\n    \"organic\": \"SEO\",\n    \"agregatory\": \"Агрегаторы и каталоги\", \"referral\": \"Агрегаторы и каталоги\",\n    \"poligrafiya\": \"Офлайн-реклама\", \"outdoor\": \"Офлайн-реклама\",\n    \"smm\": \"Соцсети\",\n}\nBRANCHES = [  # фрагмент в source / url -> филиал\n    ((\"lyuber\", \"luber\", \"люберц\"), \"Люберцы\"),\n    ((\"lytkarino\", \"litkarino\", \"лыткарин\", \"лыдкарин\"), \"Лыткарино\"),\n    ((\"ramensk\", \"раменск\"), \"Раменское\"),\n    ((\"uhtomsk\", \"ukhtomsk\"), \"Ухтомская\"),\n    ((\"kashin\", \"кашин\"), \"Кашин\"),\n    ((\"kesova\", \"кесов\"), \"Кесова Гора\"),\n]\n\n\ndef get(url):\n    with urllib.request.urlopen(url, timeout=120) as r:\n        return json.load(r)\n\n\ndef channel(medium):\n    return CHANNELS.get(medium or \"\", \"Прямые звонки и без источника\")\n\n\ndef branch(*texts):\n    t = \" \".join(x or \"\" for x in texts).lower()\n    for keys, name in BRANCHES:\n        if any(k in t for k in keys):\n            return name\n    return \"Не определён (общий номер)\"\n\n\ndef calls(d1, d2):\n    site, tok = os.environ[\"CALLTOUCH_SITE_ID\"], os.environ[\"CALLTOUCH_TOKEN\"]\n    out, page = [], 1\n    while True:\n        q = urllib.parse.urlencode(dict(clientApiId=tok, dateFrom=d1.strftime(\"%d/%m/%Y\"),\n                                        dateTo=d2.strftime(\"%d/%m/%Y\"), page=page, limit=1000))\n        d = get(f\"{CT}/{site}/calls-diary/calls?{q}\")\n        out += d[\"records\"]\n        if page >= d[\"pageTotal\"]:\n            return out\n        page += 1\n\n\ndef requests(d1, d2):\n    q = urllib.parse.urlencode(dict(clientApiId=os.environ[\"CALLTOUCH_TOKEN\"],\n                                    dateFrom=d1.strftime(\"%m/%d/%Y\"), dateTo=d2.strftime(\"%m/%d/%Y\")))\n    return get(f\"{CT}/requests/?{q}\")\n\n\ndef visits(d1, d2):\n    q = urllib.parse.urlencode(dict(ids=COUNTER, metrics=\"ym:s:visits\", dimensions=\"ym:s:lastTrafficSource\",\n                                    date1=d1.isoformat(), date2=d2.isoformat(), lang=\"ru\"))\n    return {r[\"dimensions\"][0][\"name\"]: int(r[\"metrics\"][0]) for r in get(f\"{METRIKA}?{q}\")[\"data\"]}\n\n\ndef leads(d1, d2):\n    \"\"\"Список лидов: dict(date, kind, source, medium, channel, branch) + общие счётчики.\"\"\"\n    rows, c = [], calls(d1, d2)\n    for r in c:\n        if r[\"uniqTargetCall\"]:\n            rows.append(dict(date=dt.datetime.strptime(r[\"date\"][:10], \"%d/%m/%Y\").date().isoformat(),\n                             kind=\"call\", source=r[\"source\"], medium=r[\"medium\"], channel=channel(r[\"medium\"]),\n                             branch=branch(r[\"source\"], r[\"url\"], r.get(\"subPoolName\"))))\n    for r in requests(d1, d2):\n        if r.get(\"uniqTargetRequest\"):\n            s = r.get(\"session\") or {}\n            rows.append(dict(date=dt.datetime.strptime(r[\"dateStr\"][:10], \"%d/%m/%Y\").date().isoformat(),\n                             kind=\"request\", source=s.get(\"source\") or \"(нет данных)\", medium=s.get(\"medium\"),\n                             channel=channel(s.get(\"medium\")), branch=branch(s.get(\"source\"), s.get(\"url\"))))\n    stats = dict(calls_total=len(c), missed=sum(1 for r in c if not r[\"successful\"]))\n    return rows, stats\n\n\ndef write(name, rows, meta):\n    os.makedirs(OUT, exist_ok=True)\n    with open(os.path.join(OUT, f\"{name}.json\"), \"w\", encoding=\"utf-8\") as f:\n        json.dump(dict(rows=rows, meta=meta), f, ensure_ascii=False, indent=1)\n\n\ndef main(a, b):\n    d1, d2 = dt.date.fromisoformat(a), dt.date.fromisoformat(b)\n    n = (d2 - d1).days + 1\n    p1, p2 = d1 - dt.timedelta(days=n), d1 - dt.timedelta(days=1)\n    cur, cs = leads(d1, d2)\n    prev, ps = leads(p1, p2)\n    vc, vp = visits(d1, d2), visits(p1, p2)\n\n    code = open(os.path.abspath(__file__), encoding=\"utf-8\").read()\n    meta = [dict(label=\"leads_report.py\", value=code, type=\"code\", lang=\"python\"),\n            dict(label=\"Период\", value=f\"{d1:%d.%m.%Y}–{d2:%d.%m.%Y}, сравнение с {p1:%d.%m.%Y}–{p2:%d.%m.%Y}\"),\n            dict(label=\"Источник\", value=\"Calltouch API (звонки, заявки), Яндекс Метрика (счётчик 100med.ru)\"),\n            dict(label=\"Собрано\", value=dt.datetime.now().strftime(\"%d.%m.%Y %H:%M\"))]\n\n    def cnt(rows, key=None, kind=None):\n        return collections.Counter((r[key] if key else None) for r in rows if kind in (None, r[\"kind\"]))\n\n    write(\"summary\", [\n        dict(period=\"Текущий\", start=d1.isoformat(), end=d2.isoformat(), leads=len(cur),\n             calls=len([r for r in cur if r[\"kind\"] == \"call\"]), requests=len([r for r in cur if r[\"kind\"] == \"request\"]),\n             calls_total=cs[\"calls_total\"], missed=cs[\"missed\"], visits=sum(vc.values())),\n        dict(period=\"Предыдущий\", start=p1.isoformat(), end=p2.isoformat(), leads=len(prev),\n             calls=len([r for r in prev if r[\"kind\"] == \"call\"]), requests=len([r for r in prev if r[\"kind\"] == \"request\"]),\n             calls_total=ps[\"calls_total\"], missed=ps[\"missed\"], visits=sum(vp.values())),\n    ], meta)\n\n    days = [(d1 + dt.timedelta(days=i)).isoformat() for i in range(n)]\n    cc, cr = cnt(cur, \"date\", \"call\"), cnt(cur, \"date\", \"request\")\n    write(\"daily\", [dict(date=d, calls=cc[d], requests=cr[d], leads=cc[d] + cr[d]) for d in days], meta)\n\n    def table(key):\n        a, b = cnt(cur, key), cnt(prev, key)\n        ac, ar = cnt(cur, key, \"call\"), cnt(cur, key, \"request\")\n        return sorted((dict(name=k, leads=a[k], calls=ac[k], requests=ar[k], leads_prev=b[k])\n                       for k in set(a) | set(b)), key=lambda r: (-r[\"leads\"], -r[\"leads_prev\"]))\n\n    write(\"channels\", [dict(channel=r.pop(\"name\"), **r) for r in table(\"channel\")], meta)\n    write(\"branches\", [dict(branch=r.pop(\"name\"), **r) for r in table(\"branch\")], meta)\n\n    src = collections.defaultdict(lambda: dict(calls=0, requests=0))\n    for r in cur:\n        k = (r[\"source\"], r[\"medium\"] or \"(none)\", r[\"channel\"], r[\"branch\"])\n        src[k][\"calls\" if r[\"kind\"] == \"call\" else \"requests\"] += 1\n    write(\"sources\", sorted((dict(source=k[0], medium=k[1], channel=k[2], branch=k[3], leads=v[\"calls\"] + v[\"requests\"], **v)\n                             for k, v in src.items()), key=lambda r: -r[\"leads\"]), meta)\n\n    write(\"visits\", sorted((dict(traffic=k, visits=vc.get(k, 0), visits_prev=vp.get(k, 0)) for k in set(vc) | set(vp)),\n                           key=lambda r: -r[\"visits\"]), meta)\n    print(f\"leads {len(cur)} (prev {len(prev)}), visits {sum(vc.values())}\")\n\n\nif __name__ == \"__main__\":\n    main(*sys.argv[1:3])\n",
+   "type": "code",
+   "lang": "python"
+  },
+  {
+   "label": "Период",
+   "value": "16.11.2026–22.11.2026, сравнение с 09.11.2026–15.11.2026"
+  },
+  {
+   "label": "Источник",
+   "value": "Calltouch API (звонки, заявки), Яндекс Метрика (счётчик 100med.ru)"
+  },
+  {
+   "label": "Собрано",
+   "value": "23.11.2026 13:20"
+  }
+ ]
+}

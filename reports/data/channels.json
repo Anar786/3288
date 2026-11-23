@@ -1,0 +1,73 @@
+{
+ "rows": [
+  {
+   "channel": "Карты (Яндекс, Google, 2ГИС)",
+   "leads": 497,
+   "calls": 479,
+   "requests": 18,
+   "leads_prev": 506
+  },
+  {
+   "channel": "Прямые звонки и без источника",
+   "leads": 289,
+   "calls": 283,
+   "requests": 6,
+   "leads_prev": 308
+  },
+  {
+   "channel": "Платная реклама",
+   "leads": 221,
+   "calls": 170,
+   "requests": 51,
+   "leads_prev": 241
+  },
+  {
+   "channel": "SEO",
+   "leads": 124,
+   "calls": 100,
+   "requests": 24,
+   "leads_prev": 151
+  },
+  {
+   "channel": "Офлайн-реклама",
+   "leads": 49,
+   "calls": 49,
+   "requests": 0,
+   "leads_prev": 41
+  },
+  {
+   "channel": "Агрегаторы и каталоги",
+   "leads": 37,
+   "calls": 37,
+   "requests": 0,
+   "leads_prev": 27
+  },
+  {
+   "channel": "Соцсети",
+   "leads": 8,
+   "calls": 8,
+   "requests": 0,
+   "leads_prev": 5
+  }
+ ],
+ "meta": [
+  {
+   "label": "leads_report.py",
+   "value": "#!/usr/bin/env python3\n\"\"\"Отчёт по лидам 100мед: Calltouch (звонки и заявки) + Яндекс Метрика (визиты).\n\nЗапуск:  python3 reports/leads_report.py 2026-11-16 2026-11-22\nНужны переменные окружения CALLTOUCH_SITE_ID, CALLTOUCH_TOKEN; доступ к Метрике\nдаёт прокси среды. Пишет агрегаты (без телефонов и ФИО) в reports/data/*.json.\n\nЛид = уникально-целевой звонок + уникально-целевая заявка (флаги Calltouch\nuniqTargetCall / uniqTargetRequest). Сравнение — с периодом той же длины до него.\n\"\"\"\nimport collections\nimport datetime as dt\nimport json\nimport os\nimport sys\nimport urllib.parse\nimport urllib.request\n\nCT = \"https://api.calltouch.ru/calls-service/RestAPI\"\nMETRIKA = \"https://api-metrika.yandex.net/stat/v1/data\"\nCOUNTER = 10180198  # 100med.ru\nOUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), \"data\")\n\nCHANNELS = {\n    \"geo\": \"Карты (Яндекс, Google, 2ГИС)\",\n    \"cpc\": \"Платная реклама\", \"cpa\": \"Платная реклама\",\n    \"organic\": \"SEO\",\n    \"agregatory\": \"Агрегаторы и каталоги\", \"referral\": \"Агрегаторы и каталоги\",\n    \"poligrafiya\": \"Офлайн-реклама\", \"outdoor\": \"Офлайн-реклама\",\n    \"smm\": \"Соцсети\",\n}\nBRANCHES = [  # фрагмент в source / url -> филиал\n    ((\"lyuber\", \"luber\", \"люберц\"), \"Люберцы\"),\n    ((\"lytkarino\", \"litkarino\", \"лыткарин\", \"лыдкарин\"), \"Лыткарино\"),\n    ((\"ramensk\", \"раменск\"), \"Раменское\"),\n    ((\"uhtomsk\", \"ukhtomsk\"), \"Ухтомская\"),\n    ((\"kashin\", \"кашин\"), \"Кашин\"),\n    ((\"kesova\", \"кесов\"), \"Кесова Гора\"),\n]\n\n\ndef get(url):\n    with urllib.request.urlopen(url, timeout=120) as r:\n        return json.load(r)\n\n\ndef channel(medium):\n    return CHANNELS.get(medium or \"\", \"Прямые звонки и без источника\")\n\n\ndef branch(*texts):\n    t = \" \".join(x or \"\" for x in texts).lower()\n    for keys, name in BRANCHES:\n        if any(k in t for k in keys):\n            return name\n    return \"Не определён (общий номер)\"\n\n\ndef calls(d1, d2):\n    site, tok = os.environ[\"CALLTOUCH_SITE_ID\"], os.environ[\"CALLTOUCH_TOKEN\"]\n    out, page = [], 1\n    while True:\n        q = urllib.parse.urlencode(dict(clientApiId=tok, dateFrom=d1.strftime(\"%d/%m/%Y\"),\n                                        dateTo=d2.strftime(\"%d/%m/%Y\"), page=page, limit=1000))\n        d = get(f\"{CT}/{site}/calls-diary/calls?{q}\")\n        out += d[\"records\"]\n        if page >= d[\"pageTotal\"]:\n            return out\n        page += 1\n\n\ndef requests(d1, d2):\n    q = urllib.parse.urlencode(dict(clientApiId=os.environ[\"CALLTOUCH_TOKEN\"],\n                                    dateFrom=d1.strftime(\"%m/%d/%Y\"), dateTo=d2.strftime(\"%m/%d/%Y\")))\n    return get(f\"{CT}/requests/?{q}\")\n\n\ndef visits(d1, d2):\n    q = urllib.parse.urlencode(dict(ids=COUNTER, metrics=\"ym:s:visits\", dimensions=\"ym:s:lastTrafficSource\",\n                                    date1=d1.isoformat(), date2=d2.isoformat(), lang=\"ru\"))\n    return {r[\"dimensions\"][0][\"name\"]: int(r[\"metrics\"][0]) for r in get(f\"{METRIKA}?{q}\")[\"data\"]}\n\n\ndef leads(d1, d2):\n    \"\"\"Список лидов: dict(date, kind, source, medium, channel, branch) + общие счётчики.\"\"\"\n    rows, c = [], calls(d1, d2)\n    for r in c:\n        if r[\"uniqTargetCall\"]:\n            rows.append(dict(date=dt.datetime.strptime(r[\"date\"][:10], \"%d/%m/%Y\").date().isoformat(),\n                             kind=\"call\", source=r[\"source\"], medium=r[\"medium\"], channel=channel(r[\"medium\"]),\n                             branch=branch(r[\"source\"], r[\"url\"], r.get(\"subPoolName\"))))\n    for r in requests(d1, d2):\n        if r.get(\"uniqTargetRequest\"):\n            s = r.get(\"session\") or {}\n            rows.append(dict(date=dt.datetime.strptime(r[\"dateStr\"][:10], \"%d/%m/%Y\").date().isoformat(),\n                             kind=\"request\", source=s.get(\"source\") or \"(нет данных)\", medium=s.get(\"medium\"),\n                             channel=channel(s.get(\"medium\")), branch=branch(s.get(\"source\"), s.get(\"url\"))))\n    stats = dict(calls_total=len(c), missed=sum(1 for r in c if not r[\"successful\"]))\n    return rows, stats\n\n\ndef write(name, rows, meta):\n    os.makedirs(OUT, exist_ok=True)\n    with open(os.path.join(OUT, f\"{name}.json\"), \"w\", encoding=\"utf-8\") as f:\n        json.dump(dict(rows=rows, meta=meta), f, ensure_ascii=False, indent=1)\n\n\ndef main(a, b):\n    d1, d2 = dt.date.fromisoformat(a), dt.date.fromisoformat(b)\n    n = (d2 - d1).days + 1\n    p1, p2 = d1 - dt.timedelta(days=n), d1 - dt.timedelta(days=1)\n    cur, cs = leads(d1, d2)\n    prev, ps = leads(p1, p2)\n    vc, vp = visits(d1, d2), visits(p1, p2)\n\n    code = open(os.path.abspath(__file__), encoding=\"utf-8\").read()\n    meta = [dict(label=\"leads_report.py\", value=code, type=\"code\", lang=\"python\"),\n            dict(label=\"Период\", value=f\"{d1:%d.%m.%Y}–{d2:%d.%m.%Y}, сравнение с {p1:%d.%m.%Y}–{p2:%d.%m.%Y}\"),\n            dict(label=\"Источник\", value=\"Calltouch API (звонки, заявки), Яндекс Метрика (счётчик 100med.ru)\"),\n            dict(label=\"Собрано\", value=dt.datetime.now().strftime(\"%d.%m.%Y %H:%M\"))]\n\n    def cnt(rows, key=None, kind=None):\n        return collections.Counter((r[key] if key else None) for r in rows if kind in (None, r[\"kind\"]))\n\n    write(\"summary\", [\n        dict(period=\"Текущий\", start=d1.isoformat(), end=d2.isoformat(), leads=len(cur),\n             calls=len([r for r in cur if r[\"kind\"] == \"call\"]), requests=len([r for r in cur if r[\"kind\"] == \"request\"]),\n             calls_total=cs[\"calls_total\"], missed=cs[\"missed\"], visits=sum(vc.values())),\n        dict(period=\"Предыдущий\", start=p1.isoformat(), end=p2.isoformat(), leads=len(prev),\n             calls=len([r for r in prev if r[\"kind\"] == \"call\"]), requests=len([r for r in prev if r[\"kind\"] == \"request\"]),\n             calls_total=ps[\"calls_total\"], missed=ps[\"missed\"], visits=sum(vp.values())),\n    ], meta)\n\n    days = [(d1 + dt.timedelta(days=i)).isoformat() for i in range(n)]\n    cc, cr = cnt(cur, \"date\", \"call\"), cnt(cur, \"date\", \"request\")\n    write(\"daily\", [dict(date=d, calls=cc[d], requests=cr[d], leads=cc[d] + cr[d]) for d in days], meta)\n\n    def table(key):\n        a, b = cnt(cur, key), cnt(prev, key)\n        ac, ar = cnt(cur, key, \"call\"), cnt(cur, key, \"request\")\n        return sorted((dict(name=k, leads=a[k], calls=ac[k], requests=ar[k], leads_prev=b[k])\n                       for k in set(a) | set(b)), key=lambda r: (-r[\"leads\"], -r[\"leads_prev\"]))\n\n    write(\"channels\", [dict(channel=r.pop(\"name\"), **r) for r in table(\"channel\")], meta)\n    write(\"branches\", [dict(branch=r.pop(\"name\"), **r) for r in table(\"branch\")], meta)\n\n    src = collections.defaultdict(lambda: dict(calls=0, requests=0))\n    for r in cur:\n        k = (r[\"source\"], r[\"medium\"] or \"(none)\", r[\"channel\"], r[\"branch\"])\n        src[k][\"calls\" if r[\"kind\"] == \"call\" else \"requests\"] += 1\n    write(\"sources\", sorted((dict(source=k[0], medium=k[1], channel=k[2], branch=k[3], leads=v[\"calls\"] + v[\"requests\"], **v)\n                             for k, v in src.items()), key=lambda r: -r[\"leads\"]), meta)\n\n    write(\"visits\", sorted((dict(traffic=k, visits=vc.get(k, 0), visits_prev=vp.get(k, 0)) for k in set(vc) | set(vp)),\n                           key=lambda r: -r[\"visits\"]), meta)\n    print(f\"leads {len(cur)} (prev {len(prev)}), visits {sum(vc.values())}\")\n\n\nif __name__ == \"__main__\":\n    main(*sys.argv[1:3])\n",
+   "type": "code",
+   "lang": "python"
+  },
+  {
+   "label": "Период",
+   "value": "16.11.2026–22.11.2026, сравнение с 09.11.2026–15.11.2026"
+  },
+  {
+   "label": "Источник",
+   "value": "Calltouch API (звонки, заявки), Яндекс Метрика (счётчик 100med.ru)"
+  },
+  {
+   "label": "Собрано",
+   "value": "23.11.2026 13:20"
+  }
+ ]
+}
