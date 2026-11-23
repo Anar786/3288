@@ -1,0 +1,2 @@
+Source: https://github.com/DietrichGebert/ponytail @ ebd8654 (plugin v5.3.3, MIT)
+Skills only; plugin hooks (band, ledger, webhook) not installed.
