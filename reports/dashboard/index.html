@@ -172,7 +172,7 @@ dash.draw('top-channel', (el) => {
   if (d.status !== 'ok' || !d.data.length) { el.textContent = '—'; return; }
   const top = d.data.slice().sort((a, b) => b.leads - a.leads)[0];
   const tot = d3.sum(d.data, (r) => +r.leads);
-  el.textContent = top.channel.toLowerCase() + ' — ' + Math.round((top.leads / tot) * 100) + '% лидов';
+  el.textContent = '«' + top.channel + '» — ' + Math.round((top.leads / tot) * 100) + '% лидов';
 });
 for (const m of ['leads', 'calls', 'requests', 'visits']) {
   const upGood = true;
