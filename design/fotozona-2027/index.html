@@ -1,0 +1,290 @@
+<title>Фотозона «Рецепт на 2027»</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: brief-style sheet — header, большой фронтальный рендер, план сверху, затем спецификация карточками в две колонки */
+:root{
+  --bg:#f6f7fb; --surface:#ffffff; --line:#d8dfe8; --fg:#1b1455; --muted:#545a82;
+  --indy:#6187ff; --rose:#e90055; --orange:#ff8a1f; --lime:#9ccc2c;
+  --display:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f0d2a; --surface:#1a1740; --line:#2e2a5e; --fg:#eef0ff; --muted:#a9acd6;
+  --indy:#8aa6ff; --rose:#ff4d8a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f0d2a; --surface:#1a1740; --line:#2e2a5e; --fg:#eef0ff; --muted:#a9acd6;
+  --indy:#8aa6ff; --rose:#ff4d8a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 56px}
+.wrap{max-width:1160px;margin:0 auto;display:grid;gap:40px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,4.4vw,46px);font-weight:800;line-height:1.1}
+h2{font-size:clamp(20px,2.4vw,26px);font-weight:700}
+h3{font-size:17px;font-weight:700}
+p{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+header{display:grid;gap:12px}
+.lead{max-width:62ch;color:var(--muted);font-size:17px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.pill{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:500}
+.pill b{color:var(--rose);font-weight:700}
+section{display:grid;gap:16px}
+.figure{background:var(--surface);border:1px solid var(--line);border-radius:28px;overflow:hidden}
+.scroll{overflow-x:auto}
+.scroll svg{display:block;width:100%;min-width:640px;height:auto}
+.cap{padding:14px 20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:22px;display:grid;gap:12px;align-content:start;min-width:0}
+ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+li{padding-left:22px;position:relative}
+li::before{content:"";position:absolute;left:2px;top:.5em;width:10px;height:10px;border:2px solid var(--indy);border-radius:50%}
+table{width:100%;border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums}
+td,th{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:flex;align-items:center;gap:8px;font-size:13px;font-family:ui-monospace,Menlo,monospace}
+.sw{width:28px;height:28px;border-radius:50%;border:1px solid var(--line)}
+.note{font-size:14px;color:var(--muted)}
+.prompt{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:14px;white-space:pre-wrap;word-break:break-word}
+button{font:600 14px var(--body);border-radius:999px;padding:10px 18px;border:0;background:var(--rose);color:#fff;cursor:pointer;justify-self:start;min-height:44px}
+button:focus-visible{outline:3px solid var(--indy);outline-offset:2px}
+.math{font-size:15px}
+.math strong{color:var(--rose)}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">Новогодний корпоратив · 100med × «Цитрус»</span>
+  <h1>Рецепт на 2027: 100% здоровья + 100% энергии</h1>
+  <p class="lead">Визуализация фотозоны для 300 гостей. Основная стена для групповых фото и отдельная неоновая зона для вертикальных видео, чтобы не было очереди.</p>
+  <div class="facts">
+    <span class="pill">Дата: <b>20 декабря</b></span>
+    <span class="pill">Гости: <b>≈300</b></span>
+    <span class="pill">Зоны: <b>2</b></span>
+    <span class="pill">Фотографы: <b>2</b></span>
+  </div>
+</header>
+
+<section>
+  <h2>Зона А. Главная стена, вид спереди</h2>
+  <div class="figure">
+    <div class="scroll">
+    <svg viewBox="0 0 1200 660" role="img" aria-label="Фронтальный вид фотозоны: белая стена с надписью «Рецепт на 2027», объёмные цифры 2027 с апельсином вместо нуля, шаровые гирлянды по бокам, стойка с табличками справа">
+      <defs>
+        <radialGradient id="orange" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ffc06b"/><stop offset=".6" stop-color="#ff8a1f"/><stop offset="1" stop-color="#e86a00"/></radialGradient>
+        <linearGradient id="room" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9ecf4"/><stop offset="1" stop-color="#dde2ee"/></linearGradient>
+        <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#1b1455" flood-opacity=".18"/></filter>
+      </defs>
+      <rect width="1200" height="660" fill="url(#room)"/>
+      <!-- пол -->
+      <rect x="0" y="540" width="1200" height="120" fill="#cfd5e3"/>
+      <ellipse cx="600" cy="585" rx="470" ry="38" fill="#eef1f7"/>
+      <!-- стена 6 м × 2,5 м -->
+      <rect x="100" y="125" width="1000" height="415" rx="18" fill="#ffffff" filter="url(#soft)"/>
+      <!-- лого-плашки (заменить на векторные логотипы) -->
+      <g font-family="Montserrat,Arial,sans-serif" font-weight="800">
+        <rect x="150" y="150" width="150" height="46" rx="23" fill="#1b1455"/>
+        <text x="225" y="180" text-anchor="middle" font-size="20" fill="#ffffff">100med</text>
+        <rect x="900" y="150" width="150" height="46" rx="23" fill="#ff8a1f"/>
+        <text x="975" y="180" text-anchor="middle" font-size="19" fill="#ffffff">ЦИТРУС</text>
+      </g>
+      <text x="600" y="232" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-weight="800" font-size="34" letter-spacing="6" fill="#1b1455">РЕЦЕПТ НА</text>
+      <!-- объёмные цифры -->
+      <g font-family="Montserrat,Arial,sans-serif" font-weight="800" font-size="210">
+        <g fill="#354092"><text x="358" y="452">2</text><text x="702" y="452">2</text><text x="848" y="452">7</text></g>
+        <g fill="#6187ff"><text x="350" y="444">2</text><text x="694" y="444">2</text></g>
+        <text x="840" y="444" fill="#e90055">7</text>
+      </g>
+      <!-- апельсин вместо нуля -->
+      <g transform="translate(588 372)">
+        <circle r="86" fill="#d85f00" transform="translate(6 6)"/>
+        <circle r="86" fill="url(#orange)"/>
+        <circle r="60" fill="#ffd9a3" opacity=".55"/>
+        <g stroke="#ffb35c" stroke-width="5" opacity=".9">
+          <line x1="0" y1="-58" x2="0" y2="58"/><line x1="-58" y1="0" x2="58" y2="0"/>
+          <line x1="-41" y1="-41" x2="41" y2="41"/><line x1="-41" y1="41" x2="41" y2="-41"/>
+        </g>
+        <circle r="10" fill="#fff3e0"/>
+        <path d="M10 -86 q24 -30 52 -22 q-18 28 -52 22z" fill="#7cb518"/>
+      </g>
+      <text x="600" y="505" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-weight="700" font-size="22" fill="#545a82">100% здоровья + 100% энергии</text>
+      <!-- гирлянды: генерируются скриптом -->
+      <g id="garlandL"></g><g id="garlandR"></g>
+      <!-- стойка с табличками -->
+      <g transform="translate(1000 455)">
+        <rect x="-38" y="40" width="76" height="80" rx="12" fill="#ffffff" stroke="#d8dfe8" stroke-width="3"/>
+        <line x1="-20" y1="40" x2="-30" y2="-10" stroke="#9aa3bd" stroke-width="4"/>
+        <line x1="0" y1="40" x2="2" y2="-20" stroke="#9aa3bd" stroke-width="4"/>
+        <line x1="22" y1="40" x2="32" y2="-6" stroke="#9aa3bd" stroke-width="4"/>
+        <rect x="-62" y="-44" width="58" height="34" rx="17" fill="#e90055"/>
+        <rect x="-26" y="-58" width="58" height="34" rx="17" fill="#9ccc2c"/>
+        <rect x="10" y="-36" width="58" height="34" rx="17" fill="#6187ff"/>
+      </g>
+      <!-- силуэты людей для масштаба (1,7 м) -->
+      <g fill="#b8c0d6" opacity=".9">
+        <circle cx="470" cy="290" r="26"/><rect x="438" y="322" width="64" height="150" rx="30"/><rect x="446" y="455" width="20" height="100" rx="10"/><rect x="474" y="455" width="20" height="100" rx="10"/>
+        <circle cx="735" cy="296" r="25"/><rect x="704" y="327" width="62" height="145" rx="30"/><rect x="712" y="455" width="19" height="98" rx="10"/><rect x="739" y="455" width="19" height="98" rx="10"/>
+      </g>
+      <text x="600" y="600" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="600" font-size="15" fill="#545a82">● точка «Встаньте здесь» — 1,2 м от стены</text>
+      <!-- размеры -->
+      <g stroke="#545a82" stroke-width="1.5" fill="none">
+        <line x1="100" y1="630" x2="1100" y2="630"/><line x1="100" y1="622" x2="100" y2="638"/><line x1="1100" y1="622" x2="1100" y2="638"/>
+        <line x1="60" y1="125" x2="60" y2="540"/><line x1="52" y1="125" x2="68" y2="125"/><line x1="52" y1="540" x2="68" y2="540"/>
+      </g>
+      <g font-family="Inter,Arial,sans-serif" font-size="15" font-weight="600" fill="#1b1455">
+        <rect x="570" y="619" width="60" height="22" fill="#cfd5e3"/><text x="600" y="635" text-anchor="middle">6 м</text>
+        <text x="34" y="338" text-anchor="middle" transform="rotate(-90 34 338)">2,5 м</text>
+      </g>
+    </svg>
+    </div>
+    <p class="cap">Левая половина в цветах 100med, правая в цветах «Цитруса», центр нейтральный. Плашки с названиями — заглушки: на печать идут векторные логотипы одного размера. Силуэты показывают масштаб.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Расстановка, вид сверху</h2>
+  <div class="figure">
+    <div class="scroll">
+    <svg viewBox="0 0 1200 560" role="img" aria-label="План сверху: зона А шириной 6 метров с фотографом и двумя софтбоксами, очередь с ограждением справа, стол с реквизитом; зона Б — неоновая стена 2,5 метра с кольцевой лампой для видео">
+      <rect width="1200" height="560" fill="#f3f5fa"/>
+      <g stroke="#e1e5ee" stroke-width="1">
+        <path id="gridlines" d=""/>
+      </g>
+      <!-- зона A -->
+      <rect x="100" y="50" width="600" height="18" rx="4" fill="#1b1455"/>
+      <text x="400" y="40" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-weight="800" font-size="16" fill="#1b1455">ЗОНА А · стена 6 м</text>
+      <circle cx="118" cy="80" r="16" fill="#6187ff"/><circle cx="138" cy="96" r="13" fill="#e90055"/><circle cx="112" cy="110" r="11" fill="#1b1455"/>
+      <circle cx="682" cy="80" r="16" fill="#ff8a1f"/><circle cx="662" cy="96" r="13" fill="#9ccc2c"/><circle cx="688" cy="110" r="11" fill="#ffd23f"/>
+      <rect x="200" y="90" width="400" height="140" rx="20" fill="#e6ebf5" stroke="#b8c0d6" stroke-dasharray="6 6"/>
+      <text x="400" y="166" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" fill="#545a82">ковёр · группа до 10 человек</text>
+      <!-- фотограф и свет -->
+      <circle cx="400" cy="420" r="20" fill="#e90055"/>
+      <text x="400" y="460" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" fill="#1b1455">Фотограф 1 · 3,5 м от стены</text>
+      <g fill="#ffffff" stroke="#6187ff" stroke-width="3">
+        <rect x="170" y="330" width="56" height="34" rx="6" transform="rotate(-35 198 347)"/>
+        <rect x="574" y="330" width="56" height="34" rx="6" transform="rotate(35 602 347)"/>
+      </g>
+      <g stroke="#6187ff" stroke-width="2" stroke-dasharray="4 6" opacity=".7">
+        <line x1="198" y1="347" x2="300" y2="200"/><line x1="602" y1="347" x2="500" y2="200"/>
+      </g>
+      <text x="198" y="395" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" fill="#545a82">софтбокс 45°</text>
+      <text x="602" y="395" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" fill="#545a82">софтбокс 45°</text>
+      <!-- реквизит -->
+      <rect x="720" y="150" width="70" height="110" rx="14" fill="#ffffff" stroke="#b8c0d6" stroke-width="2"/>
+      <text x="755" y="200" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="600" fill="#1b1455">таблички</text>
+      <text x="755" y="216" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="600" fill="#1b1455">рамка</text>
+      <!-- очередь -->
+      <path d="M760 520 L760 320 L660 320" fill="none" stroke="#9aa3bd" stroke-width="4" stroke-linecap="round"/>
+      <path d="M820 520 L820 280 L640 280" fill="none" stroke="#9aa3bd" stroke-width="4" stroke-linecap="round"/>
+      <g fill="#9aa3bd"><circle cx="760" cy="520" r="7"/><circle cx="760" cy="320" r="7"/><circle cx="820" cy="520" r="7"/><circle cx="820" cy="280" r="7"/></g>
+      <path d="M790 540 L790 300 L650 300" fill="none" stroke="#e90055" stroke-width="2.5" stroke-dasharray="2 10" stroke-linecap="round"/>
+      <text x="790" y="555" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#e90055">вход в очередь</text>
+      <!-- QR -->
+      <rect x="845" y="470" width="44" height="44" rx="8" fill="#1b1455"/>
+      <g fill="#ffffff"><rect x="851" y="476" width="12" height="12"/><rect x="871" y="476" width="12" height="12"/><rect x="851" y="496" width="12" height="12"/><rect x="873" y="498" width="6" height="6"/></g>
+      <text x="900" y="490" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#1b1455">стойка: QR на альбом,</text>
+      <text x="900" y="507" font-family="Inter,Arial,sans-serif" font-size="13" fill="#545a82">#Заряжены2027, текст о фото</text>
+      <!-- зона B -->
+      <rect x="880" y="50" width="250" height="18" rx="4" fill="#ff8a1f"/>
+      <text x="1005" y="40" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-weight="800" font-size="16" fill="#1b1455">ЗОНА Б · неон 2,5 м</text>
+      <circle cx="1005" cy="140" r="14" fill="#9ccc2c"/>
+      <text x="1005" y="175" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#545a82">метка «Встань сюда»</text>
+      <circle cx="1005" cy="300" r="22" fill="none" stroke="#6187ff" stroke-width="6"/>
+      <circle cx="1005" cy="300" r="5" fill="#1b1455"/>
+      <text x="1005" y="345" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" fill="#1b1455">кольцевая лампа + телефон</text>
+      <text x="1005" y="364" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" fill="#545a82">Фотограф 2 / видео 9:16</text>
+      <!-- масштаб -->
+      <g stroke="#545a82" stroke-width="2"><line x1="100" y1="520" x2="200" y2="520"/><line x1="100" y1="512" x2="100" y2="528"/><line x1="200" y1="512" x2="200" y2="528"/></g>
+      <text x="150" y="545" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#545a82">1 м</text>
+    </svg>
+    </div>
+    <p class="cap">Площадь под обе зоны около 9 × 5 м. Очередь заводится сбоку, чтобы не попадать в кадр. Зону Б лучше поставить ближе к танцполу: там снимают видео в движении.</p>
+  </div>
+</section>
+
+<section class="grid2">
+  <div class="card">
+    <h3>Почему две зоны</h3>
+    <p class="math">Из 300 гостей фотографируются примерно 70%, это <strong>≈210 человек</strong>. Это около 60 групповых снимков и 100 одиночных или парных. На каждый уходит около минуты, итого <strong>≈2,5 часа</strong> работы одной стены. Пик приходится на первые полтора часа, поэтому с одной стеной будет очередь.</p>
+    <p class="note">Зона Б снимает видео и селфи, а зона А делает групповые фото. Очередь делится примерно пополам.</p>
+  </div>
+  <div class="card">
+    <h3>Палитра</h3>
+    <div class="chips">
+      <span class="chip"><span class="sw" style="background:#1b1455"></span>#1b1455</span>
+      <span class="chip"><span class="sw" style="background:#6187ff"></span>#6187ff</span>
+      <span class="chip"><span class="sw" style="background:#e90055"></span>#e90055</span>
+      <span class="chip"><span class="sw" style="background:#ff8a1f"></span>оранж*</span>
+      <span class="chip"><span class="sw" style="background:#9ccc2c"></span>лайм*</span>
+      <span class="chip"><span class="sw" style="background:#ffffff"></span>#ffffff</span>
+    </div>
+    <p class="note">Первые три цвета взяты со стиля сайта 100med. * Цвета «Цитруса» условные: сверить с их брендбуком до печати.</p>
+  </div>
+  <div class="card">
+    <h3>Спецификация</h3>
+    <table>
+      <thead><tr><th>Элемент</th><th>Параметры</th></tr></thead>
+      <tbody>
+        <tr><td>Стена А</td><td>6 × 2,5 м, каркас + матовая баннерная ткань, 720 dpi</td></tr>
+        <tr><td>Цифры «2027»</td><td>Пенокартон 10 мм, высота 1,1 м; «0» — апельсин из пенопласта Ø 0,9 м</td></tr>
+        <tr><td>Гирлянды</td><td>2 × 3 м, шары 12–18″ и 5″, ≈350 шт.</td></tr>
+        <tr><td>Неон Б</td><td>«Заряжены на 2027», 1,4 м, на стене 2,5 × 2,5 м</td></tr>
+        <tr><td>Таблички</td><td>10 шт., ПВХ 3 мм, скруглённые, текст до 25 символов</td></tr>
+        <tr><td>Свет</td><td>2 софтбокса 60×90 см, кольцевая лампа 18″</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>Тайминг 20 декабря</h3>
+    <ul>
+      <li>За 3 часа до начала: монтаж стены, гирлянд и неона</li>
+      <li>За 1 час: тест света, пробные кадры, ответственный на месте</li>
+      <li>Первые 1,5 часа: пик, работают обе зоны и оба фотографа</li>
+      <li>После официальной части: общее фото двух команд у зоны А</li>
+      <li>21–22 декабря: отбор фото, учёт отказов, пост в соцсетях</li>
+    </ul>
+    <p class="note">Общее фото 300 человек у стены не поместится. Его снимают со сцены или с возвышения.</p>
+  </div>
+  <div class="card" style="grid-column:1/-1">
+    <h3>Промпт для фотореалистичной визуализации</h3>
+    <p class="prompt" id="prompt">corporate New Year photo booth, 6 meter wide clean white backdrop, big 3D number "2027" where the zero is a giant orange fruit slice, balloon garland in periwinkle blue and raspberry pink on the left, orange and lime green on the right, small neon sign wall nearby, soft studio lighting, minimalist, modern, friendly, wide shot, photorealistic --ar 16:9</p>
+    <button type="button" id="copy">Скопировать промпт</button>
+  </div>
+</section>
+</div>
+
+<script>
+(function(){
+  var NS="http://www.w3.org/2000/svg";
+  function garland(id,pts,colors,seed){
+    var g=document.getElementById(id), s=seed;
+    function rnd(){s=(s*9301+49297)%233280;return s/233280;}
+    for(var i=0;i<pts.length-1;i++){
+      var a=pts[i],b=pts[i+1];
+      for(var t=0;t<1;t+=0.09){
+        var x=a[0]+(b[0]-a[0])*t+(rnd()-.5)*34, y=a[1]+(b[1]-a[1])*t+(rnd()-.5)*34;
+        var r=10+rnd()*20, c=document.createElementNS(NS,"circle");
+        c.setAttribute("cx",x.toFixed(1));c.setAttribute("cy",y.toFixed(1));c.setAttribute("r",r.toFixed(1));
+        c.setAttribute("fill",colors[Math.floor(rnd()*colors.length)]);
+        g.appendChild(c);
+        var h=document.createElementNS(NS,"circle");
+        h.setAttribute("cx",(x-r*.35).toFixed(1));h.setAttribute("cy",(y-r*.35).toFixed(1));h.setAttribute("r",(r*.22).toFixed(1));
+        h.setAttribute("fill","#ffffff");h.setAttribute("opacity",".45");g.appendChild(h);
+      }
+    }
+  }
+  garland("garlandL",[[110,135],[150,230],[130,340],[170,450],[140,545]],["#6187ff","#e90055","#1b1455","#ffffff","#a9bbff"],7);
+  garland("garlandR",[[1090,135],[1050,230],[1075,330],[1035,420],[1070,545]],["#ff8a1f","#9ccc2c","#ffd23f","#ffffff","#ffb35c"],13);
+  var d="";for(var x=100;x<=1200;x+=100){d+="M"+x+" 0V560";}for(var y=100;y<=560;y+=100){d+="M0 "+y+"H1200";}
+  document.getElementById("gridlines").setAttribute("d",d);
+  var btn=document.getElementById("copy");
+  btn.addEventListener("click",function(){
+    var text=document.getElementById("prompt").textContent;
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("prompt"));var s=window.getSelection();s.removeAllRanges();s.addRange(r);btn.textContent="Текст выделен — нажмите Ctrl+C";}
+    try{navigator.clipboard.writeText(text).then(function(){btn.textContent="Скопировано";},sel);}catch(e){sel();}
+  });
+})();
+</script>
