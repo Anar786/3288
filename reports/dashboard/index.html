@@ -1,0 +1,275 @@
+<meta name="dash-one-writer">
+<style>
+.ld { display: grid; gap: var(--cds-gap-xl); }
+.ld-head h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0 0 var(--cds-gap-sm); text-wrap: balance; }
+.ld-lede { font-size: var(--cds-font-size-heading); line-height: 1.45; margin: 0; max-width: 62ch; color: var(--color-fg); }
+.ld-sub { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin: var(--cds-gap-sm) 0 0; }
+.ld-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: var(--cds-gap-md); }
+.ld-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: grid; gap: var(--cds-gap-xs); min-width: 0; }
+.ld-card h3 { margin: 0; font-size: var(--cds-font-size-caption); font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); }
+.ld-big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: 2.1rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.ld-cmp { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.ld-good { color: var(--color-ok); font-weight: var(--cds-font-weight-medium); }
+.ld-bad { color: var(--color-bad); font-weight: var(--cds-font-weight-medium); }
+.ld-flat { color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); }
+.ld-sec { display: grid; gap: var(--cds-gap-sm); min-width: 0; }
+.ld-sec h2 { margin: 0; font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); }
+.ld-sec > p { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); max-width: 70ch; }
+.ld-chart { position: relative; min-height: 260px; }
+.ld-chart svg text { fill: var(--cds-text-secondary); font-size: var(--cds-font-size-caption); font-family: var(--font-anthropic-sans); }
+.ld-chart svg .ld-total { fill: var(--color-fg); font-variant-numeric: tabular-nums; }
+.ld-legend { display: flex; gap: var(--cds-gap-md); flex-wrap: wrap; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.ld-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.ld-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); box-shadow: var(--cds-shadow-popover); border-radius: var(--cds-radius); padding: var(--cds-pad-sm) var(--cds-pad-md); font-size: var(--cds-font-size-caption); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ld-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--cds-gap-xl); }
+.ld-wrap { overflow-x: auto; }
+.ld-wrap.ld-tall { max-height: 520px; overflow-y: auto; }
+.ld table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: var(--cds-font-size-body); }
+.ld th { text-align: left; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); position: sticky; top: 0; background: var(--color-bg); }
+.ld td { padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+.ld .num { text-align: right; white-space: nowrap; }
+.ld td.ld-name { min-width: 150px; }
+.ld .ld-bar { display: block; height: 4px; border-radius: 2px; margin-top: 4px; }
+.ld details { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.ld details summary { cursor: pointer; color: var(--color-fg); }
+.ld details ul { padding-left: 1.2em; display: grid; gap: var(--cds-gap-xs); max-width: 75ch; }
+</style>
+
+<div class="ld" lang="ru">
+  <header class="ld-head" id="head">
+    <h1>Лиды 100мед</h1>
+    <p class="ld-lede" data-read lang="ru">С <span data-draw="start">—</span> по <span data-draw="end">—</span> пришло <b data-draw="leads" data-source="summary" data-field="leads" data-where="period=Текущий">—</b> лидов, это <b data-draw="leads-pct" data-source="changes" data-field="pct" data-where="metric=leads">—</b> к предыдущей неделе. Больше всего дают <span data-draw="top-channel">—</span>.</p>
+    <p class="ld-sub">Данные Calltouch и Яндекс Метрики. Лид — уникально-целевой звонок или уникально-целевая заявка с сайта. Без телефонов и имён пациентов.</p>
+  </header>
+
+  <section class="ld-kpis" id="kpis" aria-label="Ключевые показатели за неделю">
+    <div class="ld-card" id="kpi-leads">
+      <h3>Лиды за неделю</h3>
+      <div class="ld-big" data-draw="k-leads" data-source="summary" data-field="leads" data-where="period=Текущий">—</div>
+      <div class="ld-cmp"><span data-draw="p-leads" data-source="changes" data-field="pct" data-where="metric=leads">—</span> · было <span data-draw="v-leads" data-source="summary" data-field="leads" data-where="period=Предыдущий">—</span></div>
+    </div>
+    <div class="ld-card" id="kpi-calls">
+      <h3>Целевые звонки (новые)</h3>
+      <div class="ld-big" data-draw="k-calls" data-source="summary" data-field="calls" data-where="period=Текущий">—</div>
+      <div class="ld-cmp"><span data-draw="p-calls" data-source="changes" data-field="pct" data-where="metric=calls">—</span> · было <span data-draw="v-calls" data-source="summary" data-field="calls" data-where="period=Предыдущий">—</span></div>
+    </div>
+    <div class="ld-card" id="kpi-requests">
+      <h3>Заявки с сайта (новые)</h3>
+      <div class="ld-big" data-draw="k-requests" data-source="summary" data-field="requests" data-where="period=Текущий">—</div>
+      <div class="ld-cmp"><span data-draw="p-requests" data-source="changes" data-field="pct" data-where="metric=requests">—</span> · было <span data-draw="v-requests" data-source="summary" data-field="requests" data-where="period=Предыдущий">—</span></div>
+    </div>
+    <div class="ld-card" id="kpi-visits">
+      <h3>Визиты на сайт</h3>
+      <div class="ld-big" data-draw="k-visits" data-source="summary" data-field="visits" data-where="period=Текущий">—</div>
+      <div class="ld-cmp"><span data-draw="p-visits" data-source="changes" data-field="pct" data-where="metric=visits">—</span> · было <span data-draw="v-visits" data-source="summary" data-field="visits" data-where="period=Предыдущий">—</span></div>
+    </div>
+    <div class="ld-card" id="kpi-missed">
+      <h3>Пропущенные звонки</h3>
+      <div class="ld-big"><span data-draw="k-missed" data-source="changes" data-field="cur" data-where="metric=missed_share">—</span>%</div>
+      <div class="ld-cmp"><span data-draw="m-missed" data-source="summary" data-field="missed" data-where="period=Текущий">—</span> из <span data-draw="t-missed" data-source="summary" data-field="calls_total" data-where="period=Текущий">—</span> звонков · было <span data-draw="v-missed" data-source="changes" data-field="prev" data-where="metric=missed_share">—</span>%</div>
+    </div>
+  </section>
+
+  <section class="ld-sec" id="daily-sec">
+    <h2>Лиды по дням</h2>
+    <div class="ld-legend"><span><i data-draw="sw-calls"></i>Звонки</span><span><i data-draw="sw-req"></i>Заявки с сайта</span></div>
+    <div class="ld-chart" data-draw="daily-chart" data-source="daily"></div>
+  </section>
+
+  <div class="ld-two">
+    <section class="ld-sec" id="channels-sec">
+      <h2>Каналы</h2>
+      <p>Карты — карточки филиалов в Яндекс Картах, Google и 2ГИС. Прямые звонки — основной номер и звонки без рекламной метки.</p>
+      <div class="ld-wrap">
+        <table data-source="channels" data-row-key="channel">
+          <thead><tr><th data-field="channel">Канал</th><th class="num" data-field="leads">Лиды</th><th class="num" data-field="calls">Звонки</th><th class="num" data-field="requests">Заявки</th><th class="num" data-field="leads_prev">Было</th><th class="num" data-source="channels_change" data-field="pct">Изм.</th></tr></thead>
+          <tbody data-draw="channels-body"></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="ld-sec" id="branches-sec">
+      <h2>Филиалы</h2>
+      <p>Филиал определяется по метке источника или странице сайта. Основной номер и реклама без гео-метки попадают в «Не определён».</p>
+      <div class="ld-wrap">
+        <table data-source="branches" data-row-key="branch">
+          <thead><tr><th data-field="branch">Филиал</th><th class="num" data-field="leads">Лиды</th><th class="num" data-field="calls">Звонки</th><th class="num" data-field="requests">Заявки</th><th class="num" data-field="leads_prev">Было</th><th class="num" data-source="branches_change" data-field="pct">Изм.</th></tr></thead>
+          <tbody data-draw="branches-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <section class="ld-sec" id="visits-sec">
+    <h2>Трафик сайта (Яндекс Метрика)</h2>
+    <p>Визиты на 100med.ru по последнему источнику. Звонки с Карт и основного номера идут мимо сайта, поэтому лиды и визиты напрямую не делятся.</p>
+    <div class="ld-wrap">
+      <table data-source="visits" data-row-key="traffic">
+        <thead><tr><th data-field="traffic">Источник</th><th class="num" data-field="visits">Визиты</th><th class="num" data-field="visits_prev">Было</th><th class="num" data-source="visits_change" data-field="pct">Изм.</th></tr></thead>
+        <tbody data-draw="visits-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="ld-sec" id="sources-sec">
+    <h2>Все источники за неделю</h2>
+    <p>Метки utm_source и utm_medium из Calltouch, от самых результативных.</p>
+    <div class="ld-wrap ld-tall">
+      <table data-source="sources" data-row-key="source,medium,branch">
+        <thead><tr><th data-field="source">Источник</th><th data-field="medium">Тип</th><th data-field="channel">Канал</th><th data-field="branch">Филиал</th><th class="num" data-field="leads">Лиды</th><th class="num" data-field="calls">Звонки</th><th class="num" data-field="requests">Заявки</th></tr></thead>
+        <tbody data-draw="sources-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <details id="notes">
+    <summary>Как считаются показатели</summary>
+    <ul>
+      <li>Лид — первое целевое обращение человека: звонок с флагом Calltouch «уникально-целевой» или заявка с флагом «уникально-целевая». Повторные звонки тех же людей не считаются.</li>
+      <li>Заявки — обратный звонок и запись на приём из личного кабинета на сайте.</li>
+      <li>Пропущенные — доля всех звонков (не только целевых), на которые не ответили.</li>
+      <li>Сравнение — с предыдущими семью днями. Даты — по московскому времени.</li>
+      <li>Отчёт собирается скриптом reports/leads_report.py в репозитории проекта; его код виден в источниках данных.</li>
+    </ul>
+  </details>
+</div>
+
+<script>
+// Сравнения периодов: изменение в % и доля пропущенных звонков.
+dash.calc('changes', {
+  title: 'Изменения к прошлой неделе',
+  description: 'Изменение показателей в процентах и доля пропущенных звонков.',
+  inputs: ['summary'],
+  fn: (summary) => {
+    const cur = summary.find((r) => r.period === 'Текущий');
+    const prev = summary.find((r) => r.period === 'Предыдущий');
+    if (!cur || !prev) return [];
+    const pct = (a, b) => (b ? Math.round(((a - b) / b) * 1000) / 10 : null);
+    const rows = ['leads', 'calls', 'requests', 'visits', 'missed', 'calls_total'].map((m) => ({ metric: m, cur: +cur[m], prev: +prev[m], pct: pct(+cur[m], +prev[m]) }));
+    const ms = (r) => Math.round((+r.missed / +r.calls_total) * 1000) / 10;
+    rows.push({ metric: 'missed_share', cur: ms(cur), prev: ms(prev), pct: null });
+    return rows;
+  },
+});
+dash.calc('channels_change', { title: 'Изменение лидов по каналам', description: 'Лиды к прошлой неделе, %.', inputs: ['channels'], fn: (channels) => channels.map((r) => ({ channel: r.channel, pct: +r.leads_prev ? Math.round(((+r.leads - +r.leads_prev) / +r.leads_prev) * 1000) / 10 : null })) });
+dash.calc('branches_change', { title: 'Изменение лидов по филиалам', description: 'Лиды к прошлой неделе, %.', inputs: ['branches'], fn: (branches) => branches.map((r) => ({ branch: r.branch, pct: +r.leads_prev ? Math.round(((+r.leads - +r.leads_prev) / +r.leads_prev) * 1000) / 10 : null })) });
+dash.calc('visits_change', { title: 'Изменение визитов по источникам', description: 'Визиты к прошлой неделе, %.', inputs: ['visits'], fn: (visits) => visits.map((r) => ({ traffic: r.traffic, pct: +r.visits_prev ? Math.round(((+r.visits - +r.visits_prev) / +r.visits_prev) * 1000) / 10 : null })) });
+
+window.ldFmt = new Intl.NumberFormat('ru-RU');
+window.ldNum = (v) => (v == null || v === '' ? '—' : window.ldFmt.format(+v));
+window.ldPct = (v) => (v == null ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + String(Math.abs(v)).replace('.', ',') + '%');
+// good: true если рост — хорошо
+window.ldTone = (el, v, upGood) => { el.classList.remove('ld-good', 'ld-bad', 'ld-flat'); if (v == null) return; el.classList.add(Math.abs(v) < 1 ? 'ld-flat' : (v > 0) === upGood ? 'ld-good' : 'ld-bad'); };
+window.ldRow = (src, key, val) => { const d = dash.data(src); return d.status === 'ok' && Array.isArray(d.data) ? d.data.find((r) => String(r[key]) === val) : null; };
+</script>
+
+<script>
+const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+const ruDate = (s) => { const d = new Date(s + 'T00:00:00Z'); return d.getUTCDate() + ' ' + months[d.getUTCMonth()]; };
+dash.draw('start', (el) => { const r = ldRow('summary', 'period', 'Текущий'); el.textContent = r ? ruDate(r.start) : '—'; });
+dash.draw('end', (el) => { const r = ldRow('summary', 'period', 'Текущий'); el.textContent = r ? ruDate(r.end) : '—'; });
+dash.draw('top-channel', (el) => {
+  const d = dash.data('channels');
+  if (d.status !== 'ok' || !d.data.length) { el.textContent = '—'; return; }
+  const top = d.data.slice().sort((a, b) => b.leads - a.leads)[0];
+  const tot = d3.sum(d.data, (r) => +r.leads);
+  el.textContent = top.channel.toLowerCase() + ' — ' + Math.round((top.leads / tot) * 100) + '% лидов';
+});
+for (const m of ['leads', 'calls', 'requests', 'visits']) {
+  const upGood = true;
+  dash.draw('k-' + m, (el) => { const r = ldRow('summary', 'period', 'Текущий'); el.textContent = r ? ldNum(r[m]) : '—'; });
+  dash.draw('v-' + m, (el) => { const r = ldRow('summary', 'period', 'Предыдущий'); el.textContent = r ? ldNum(r[m]) : '—'; });
+  dash.draw('p-' + m, (el) => { const r = ldRow('changes', 'metric', m); el.textContent = r ? ldPct(r.pct) : '—'; ldTone(el, r && r.pct, upGood); });
+}
+dash.draw('leads', (el) => { const r = ldRow('summary', 'period', 'Текущий'); el.textContent = r ? ldNum(r.leads) : '—'; });
+dash.draw('leads-pct', (el) => { const r = ldRow('changes', 'metric', 'leads'); el.textContent = r ? ldPct(r.pct) : '—'; ldTone(el, r && r.pct, true); });
+dash.draw('k-missed', (el) => { const r = ldRow('changes', 'metric', 'missed_share'); el.textContent = r ? String(r.cur).replace('.', ',') : '—'; });
+dash.draw('v-missed', (el) => { const r = ldRow('changes', 'metric', 'missed_share'); el.textContent = r ? String(r.prev).replace('.', ',') : '—'; });
+dash.draw('m-missed', (el) => { const r = ldRow('summary', 'period', 'Текущий'); el.textContent = r ? ldNum(r.missed) : '—'; });
+dash.draw('t-missed', (el) => { const r = ldRow('summary', 'period', 'Текущий'); el.textContent = r ? ldNum(r.calls_total) : '—'; });
+dash.draw('sw-calls', (el) => { el.style.background = dash.colors[0]; });
+dash.draw('sw-req', (el) => { el.style.background = dash.colors[1]; });
+</script>
+
+<script>
+// График лидов по дням: столбцы звонки + заявки.
+const wd = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+dash.draw('daily-chart', (el) => {
+  const d = dash.data('daily');
+  el.replaceChildren();
+  if (d.status === 'error') { el.textContent = 'Не удалось загрузить данные по дням.'; return; }
+  if (d.status !== 'ok' || !d.data.length) { el.textContent = '—'; return; }
+  const rows = d.data.map((r) => ({ date: r.date, calls: +r.calls, requests: +r.requests, leads: +r.leads }));
+  const W = Math.max(280, el.clientWidth), H = 260, m = { t: 22, r: 8, b: 40, l: 36 };
+  const x = d3.scaleBand().domain(rows.map((r) => r.date)).range([m.l, W - m.r]).padding(0.28);
+  const y = d3.scaleLinear().domain([0, d3.max(rows, (r) => r.leads) * 1.1]).nice().range([H - m.b, m.t]);
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+    .attr('aria-label', 'Лиды по дням недели: звонки и заявки с сайта');
+  svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickSize(-(W - m.l - m.r)).tickFormat(d3.format('d')))
+    .call((g) => { g.select('.domain').remove(); g.selectAll('line').style('stroke', 'var(--cds-chart-grid)'); });
+  svg.append('g').attr('transform', `translate(0,${H - m.b})`)
+    .call(d3.axisBottom(x).tickSize(0).tickPadding(8).tickFormat((s) => { const dt = new Date(s + 'T00:00:00Z'); return wd[dt.getUTCDay()] + ' ' + dt.getUTCDate(); }))
+    .call((g) => g.select('.domain').style('stroke', 'var(--cds-chart-axis)'));
+  const g = svg.append('g');
+  g.selectAll('rect.c').data(rows).join('rect').attr('x', (r) => x(r.date)).attr('width', x.bandwidth())
+    .attr('y', (r) => y(r.calls)).attr('height', (r) => y(0) - y(r.calls)).style('fill', dash.colors[0]);
+  g.selectAll('rect.q').data(rows).join('rect').attr('x', (r) => x(r.date)).attr('width', x.bandwidth())
+    .attr('y', (r) => y(r.leads)).attr('height', (r) => y(r.calls) - y(r.leads)).style('fill', dash.colors[1]);
+  g.selectAll('text.ld-total').data(rows).join('text').attr('class', 'ld-total').attr('text-anchor', 'middle')
+    .attr('x', (r) => x(r.date) + x.bandwidth() / 2).attr('y', (r) => y(r.leads) - 6).text((r) => r.leads);
+  const tip = document.createElement('div'); tip.className = 'ld-tip'; tip.hidden = true; el.appendChild(tip);
+  svg.append('g').selectAll('rect').data(rows).join('rect').attr('x', (r) => x(r.date) - (x.step() * x.paddingInner()) / 2)
+    .attr('width', x.step()).attr('y', m.t).attr('height', H - m.t - m.b).style('fill', 'transparent')
+    .on('pointermove', (ev, r) => {
+      tip.replaceChildren();
+      const dt = new Date(r.date + 'T00:00:00Z');
+      const b = document.createElement('b'); b.textContent = wd[dt.getUTCDay()] + ', ' + dt.getUTCDate() + '.' + String(dt.getUTCMonth() + 1).padStart(2, '0');
+      tip.append(b, document.createElement('br'), 'Лиды: ' + r.leads, document.createElement('br'), 'Звонки: ' + r.calls, document.createElement('br'), 'Заявки: ' + r.requests);
+      tip.hidden = false;
+      const [px, py] = d3.pointer(ev, el);
+      const tw = tip.offsetWidth;
+      tip.style.left = Math.min(Math.max(0, px + 12), el.clientWidth - tw) + 'px';
+      tip.style.top = Math.max(0, py - 70) + 'px';
+    })
+    .on('pointerleave', () => { tip.hidden = true; });
+});
+</script>
+
+<script>
+// Таблицы
+function ldTable(el, src, chg, key, cols, upGood) {
+  const d = dash.data(src);
+  el.replaceChildren();
+  if (d.status === 'error') { const tr = el.insertRow(); const td = tr.insertCell(); td.colSpan = cols.length + 2; td.textContent = 'Не удалось загрузить таблицу.'; return; }
+  if (d.status !== 'ok') return;
+  const c = chg ? dash.data(chg) : null;
+  const max = d3.max(d.data, (r) => +r[cols[0]]) || 1;
+  for (const r of d.data) {
+    const tr = el.insertRow();
+    const name = tr.insertCell(); name.className = 'ld-name'; name.textContent = r[key];
+    cols.forEach((f, i) => {
+      const td = tr.insertCell(); td.className = 'num'; td.textContent = ldNum(r[f]);
+      if (i === 0) { const bar = document.createElement('span'); bar.className = 'ld-bar'; bar.style.background = dash.colors[0]; bar.style.width = ((+r[f] / max) * 100).toFixed(1) + '%'; td.append(bar); }
+    });
+    if (chg) {
+      const td = tr.insertCell(); td.className = 'num';
+      const cr = c && c.status === 'ok' && Array.isArray(c.data) ? c.data.find((x) => x[key] === r[key]) : null;
+      td.textContent = cr ? ldPct(cr.pct) : '—'; ldTone(td, cr && cr.pct, upGood);
+    }
+  }
+}
+dash.draw('channels-body', (el) => ldTable(el, 'channels', 'channels_change', 'channel', ['leads', 'calls', 'requests', 'leads_prev'], true));
+dash.draw('branches-body', (el) => ldTable(el, 'branches', 'branches_change', 'branch', ['leads', 'calls', 'requests', 'leads_prev'], true));
+dash.draw('visits-body', (el) => ldTable(el, 'visits', 'visits_change', 'traffic', ['visits', 'visits_prev'], true));
+dash.draw('sources-body', (el) => {
+  const d = dash.data('sources');
+  el.replaceChildren();
+  if (d.status === 'error') { const td = el.insertRow().insertCell(); td.colSpan = 7; td.textContent = 'Не удалось загрузить источники.'; return; }
+  if (d.status !== 'ok') return;
+  for (const r of d.data) {
+    const tr = el.insertRow();
+    tr.dataset.key = [r.source, r.medium, r.branch].map(encodeURIComponent).join(',');
+    for (const f of ['source', 'medium', 'channel', 'branch']) tr.insertCell().textContent = r[f];
+    for (const f of ['leads', 'calls', 'requests']) { const td = tr.insertCell(); td.className = 'num'; td.textContent = ldNum(r[f]); }
+  }
+});
+</script>
