@@ -11,7 +11,7 @@ body{font-family:'Proxima Nova','Montserrat',sans-serif;background:#fff}
 .photo{position:absolute;right:0;bottom:0;width:520px;height:640px;border-radius:260px 260px 0 0;
  display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:24px;line-height:1.4}
 .photo svg{position:absolute;bottom:0;left:50%;transform:translateX(-50%);opacity:.35}
-.photo span{position:relative;z-index:1}
+.photo img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:92%}
 h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
 .name{position:absolute;left:64px;bottom:64px}
 .name .fio{font-weight:700;font-size:34px;white-space:nowrap}
@@ -20,7 +20,7 @@ h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
 /* V1 Indy */
 .v1{background:var(--indy);color:#fff}
 .v1 .logo{color:#fff}
-.v1 .photo{background:var(--g2);color:var(--blue);right:40px}
+.v1 .photo{background:var(--blue);color:var(--blue);right:40px}
 .v1 h1{position:absolute;left:64px;top:230px;width:640px;font-size:84px}
 .v1 .pill{position:absolute;left:64px;top:150px;background:#fff;color:var(--blue)}
 /* V2 light */
@@ -60,16 +60,16 @@ h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
  <div class="logo">100<b>med</b></div>
  <div class="pill">Видеоотзыв пациента</div>
  <h1>Почему я выбрала этого врача</h1>
- <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec">[специальность], 100med</div></div>
- <div class="photo"><svg width="420" height="560" viewBox="0 0 420 560"><circle cx="210" cy="170" r="110" fill="#354092"/><path d="M10 560c0-140 90-230 200-230s200 90 200 230z" fill="#354092"/></svg><span>[фото врача<br>поясной план,<br>светлый фон]</span></div>
+ <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec">Травматолог-ортопед, 100med Люберцы</div></div>
+ <div class="photo"><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
 </div>
 
 <div class="cover v2" id="v2">
  <div class="logo">100<b>med</b></div>
  <div class="pill">Отзыв пациента</div>
  <h1>Как прошёл мой приём</h1>
- <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec">[специальность], 100med</div></div>
- <div class="photo"><svg width="420" height="560" viewBox="0 0 420 560"><circle cx="210" cy="170" r="110" fill="#fff"/><path d="M10 560c0-140 90-230 200-230s200 90 200 230z" fill="#fff"/></svg><span>[фото врача<br>поясной план,<br>светлый фон]</span></div>
+ <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec">Травматолог-ортопед, 100med Люберцы</div></div>
+ <div class="photo"><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
 </div>
 
 <div class="cover v3" id="v3">
@@ -78,8 +78,8 @@ h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
  <h1>Честно о приёме у врача</h1>
  <div class="play"><svg width="30" height="34" viewBox="0 0 30 34"><path d="M2 2l26 15L2 32z" fill="#fff"/></svg></div>
  <div class="playtxt">Видеоотзыв пациента</div>
- <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec" style="color:#d8dfe8">[специальность], 100med</div></div>
- <div class="photo"><svg width="420" height="560" viewBox="0 0 420 560"><circle cx="210" cy="170" r="110" fill="#fff"/><path d="M10 560c0-140 90-230 200-230s200 90 200 230z" fill="#fff"/></svg><span>[фото врача<br>поясной план,<br>светлый фон]</span></div>
+ <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec" style="color:#d8dfe8">Травматолог-ортопед, 100med Люберцы</div></div>
+ <div class="photo"><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
 </div>
 
 
@@ -87,16 +87,16 @@ h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
  <div class="logo">100<b>med</b></div>
  <div class="pill">Видеоотзыв пациента</div>
  <h1>Почему я выбрала этого врача</h1>
- <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec">[специальность], 100med</div></div>
- <div class="photo"><svg width="420" height="560" viewBox="0 0 420 560"><circle cx="210" cy="170" r="110" fill="#354092"/><path d="M10 560c0-140 90-230 200-230s200 90 200 230z" fill="#354092"/></svg><span>[фото врача<br>поясной план,<br>светлый фон]</span></div>
+ <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec">Травматолог-ортопед, 100med Люберцы</div></div>
+ <div class="photo"><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
 </div>
 
 <div class="cover vert v2" id="s2">
  <div class="logo">100<b>med</b></div>
  <div class="pill">Отзыв пациента</div>
  <h1>Как прошёл мой приём</h1>
- <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec">[специальность], 100med</div></div>
- <div class="photo"><svg width="420" height="560" viewBox="0 0 420 560"><circle cx="210" cy="170" r="110" fill="#fff"/><path d="M10 560c0-140 90-230 200-230s200 90 200 230z" fill="#fff"/></svg><span>[фото врача<br>поясной план,<br>светлый фон]</span></div>
+ <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec">Травматолог-ортопед, 100med Люберцы</div></div>
+ <div class="photo"><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
 </div>
 
 <div class="cover vert v3" id="s3">
@@ -105,7 +105,7 @@ h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
  <h1>Честно о приёме у врача</h1>
  <div class="play"><svg width="30" height="34" viewBox="0 0 30 34"><path d="M2 2l26 15L2 32z" fill="#fff"/></svg></div>
  <div class="playtxt">Видеоотзыв пациента</div>
- <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec" style="color:#d8dfe8">[специальность], 100med</div></div>
- <div class="photo"><svg width="420" height="560" viewBox="0 0 420 560"><circle cx="210" cy="170" r="110" fill="#fff"/><path d="M10 560c0-140 90-230 200-230s200 90 200 230z" fill="#fff"/></svg><span>[фото врача<br>поясной план,<br>светлый фон]</span></div>
+ <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec" style="color:#d8dfe8">Травматолог-ортопед, 100med Люберцы</div></div>
+ <div class="photo"><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
 </div>
 </body></html>
