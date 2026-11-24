@@ -1,0 +1,111 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--dark:#1b1455;--blue:#354092;--indy:#6187ff;--rose:#e90055;--g1:#d8dfe8;--g2:#edf0f5}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Proxima Nova','Montserrat',sans-serif;background:#fff}
+.cover{width:1280px;height:720px;position:relative;overflow:hidden;margin-bottom:20px}
+.logo{position:absolute;left:64px;top:52px;font-weight:700;font-size:40px;letter-spacing:-1px}
+.logo b{color:var(--rose)}
+.pill{display:inline-block;padding:12px 28px;border-radius:999px;font-weight:600;font-size:26px}
+.photo{position:absolute;right:0;bottom:0;width:520px;height:640px;border-radius:260px 260px 0 0;
+ display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:24px;line-height:1.4}
+.photo svg{position:absolute;bottom:0;left:50%;transform:translateX(-50%);opacity:.35}
+.photo span{position:relative;z-index:1}
+h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
+.name{position:absolute;left:64px;bottom:64px}
+.name .fio{font-weight:700;font-size:38px}
+.name .spec{font-weight:400;font-size:26px;margin-top:6px}
+.play{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+/* V1 Indy */
+.v1{background:var(--indy);color:#fff}
+.v1 .logo{color:#fff}
+.v1 .photo{background:var(--g2);color:var(--blue);right:40px}
+.v1 h1{position:absolute;left:64px;top:230px;width:640px;font-size:84px}
+.v1 .pill{position:absolute;left:64px;top:150px;background:#fff;color:var(--blue)}
+/* V2 light */
+.v2{background:var(--g2);color:var(--dark)}
+.v2 .logo{color:var(--dark)}
+.v2 .photo{background:var(--indy);color:#fff;right:40px}
+.v2 .pill{position:absolute;left:64px;top:150px;background:var(--rose);color:#fff}
+.v2 h1{position:absolute;left:64px;top:230px;width:640px;font-size:80px;color:var(--dark)}
+.v2 .name .spec{color:var(--blue)}
+/* V3 dark */
+.v3{background:var(--dark);color:#fff}
+.v3 .logo{color:#fff}
+.v3 .photo{background:var(--indy);color:#fff;right:40px}
+.v3 .quote{position:absolute;left:56px;top:120px;font-size:220px;font-weight:700;color:var(--indy);line-height:1}
+.v3 h1{position:absolute;left:64px;top:240px;width:660px;font-size:78px}
+.v3 .play{position:absolute;left:64px;top:450px;width:72px;height:72px;background:var(--rose)}
+.v3 .playtxt{position:absolute;left:156px;top:468px;font-weight:600;font-size:28px}
+
+/* ===== Vertical 1080x1920 (Shorts). Safe zones: top 250, bottom 350 ===== */
+.cover.vert{width:1080px;height:1920px}
+.vert .logo{left:80px;top:270px;font-size:56px}
+.vert .pill{left:80px !important;top:380px !important;font-size:34px;padding:16px 36px}
+.vert h1{left:80px !important;top:480px !important;width:920px !important;font-size:104px !important}
+.vert .name{left:80px;top:850px;bottom:auto}
+.vert .name .fio{font-size:52px}.vert .name .spec{font-size:36px}
+.vert .photo{right:auto !important;left:140px;width:800px;height:920px;border-radius:400px 400px 0 0;font-size:34px}
+.vert .photo svg{width:620px;height:800px}
+.vert .quote{left:70px !important;top:370px !important;font-size:240px !important}
+.vert.v3 h1{top:610px !important}
+.vert .play{left:80px !important;top:900px !important;width:88px;height:88px}
+.vert .playtxt{left:190px !important;top:922px !important;font-size:36px}
+.vert.v3 .name{top:1030px}
+.vert.v3 .photo{height:740px}
+</style></head><body>
+
+<div class="cover v1" id="v1">
+ <div class="logo">100<b>med</b></div>
+ <div class="pill">Видеоотзыв пациента</div>
+ <h1>Почему я выбрала этого врача</h1>
+ <div class="name"><div class="fio">Пономарёв [И. О.]</div><div class="spec">[специальность], 100med</div></div>
+ <div class="photo"><svg width="420" height="560" viewBox="0 0 420 560"><circle cx="210" cy="170" r="110" fill="#354092"/><path d="M10 560c0-140 90-230 200-230s200 90 200 230z" fill="#354092"/></svg><span>[фото врача<br>поясной план,<br>светлый фон]</span></div>
+</div>
+
+<div class="cover v2" id="v2">
+ <div class="logo">100<b>med</b></div>
+ <div class="pill">Отзыв пациента</div>
+ <h1>Как прошёл мой приём</h1>
+ <div class="name"><div class="fio">Пономарёв [И. О.]</div><div class="spec">[специальность], 100med</div></div>
+ <div class="photo"><svg width="420" height="560" viewBox="0 0 420 560"><circle cx="210" cy="170" r="110" fill="#fff"/><path d="M10 560c0-140 90-230 200-230s200 90 200 230z" fill="#fff"/></svg><span>[фото врача<br>поясной план,<br>светлый фон]</span></div>
+</div>
+
+<div class="cover v3" id="v3">
+ <div class="logo">100<b>med</b></div>
+ <div class="quote">“</div>
+ <h1>Честно о приёме у врача</h1>
+ <div class="play"><svg width="30" height="34" viewBox="0 0 30 34"><path d="M2 2l26 15L2 32z" fill="#fff"/></svg></div>
+ <div class="playtxt">Видеоотзыв пациента</div>
+ <div class="name"><div class="fio">Пономарёв [И. О.]</div><div class="spec" style="color:#d8dfe8">[специальность], 100med</div></div>
+ <div class="photo"><svg width="420" height="560" viewBox="0 0 420 560"><circle cx="210" cy="170" r="110" fill="#fff"/><path d="M10 560c0-140 90-230 200-230s200 90 200 230z" fill="#fff"/></svg><span>[фото врача<br>поясной план,<br>светлый фон]</span></div>
+</div>
+
+
+<div class="cover vert v1" id="s1">
+ <div class="logo">100<b>med</b></div>
+ <div class="pill">Видеоотзыв пациента</div>
+ <h1>Почему я выбрала этого врача</h1>
+ <div class="name"><div class="fio">Пономарёв [И. О.]</div><div class="spec">[специальность], 100med</div></div>
+ <div class="photo"><svg width="420" height="560" viewBox="0 0 420 560"><circle cx="210" cy="170" r="110" fill="#354092"/><path d="M10 560c0-140 90-230 200-230s200 90 200 230z" fill="#354092"/></svg><span>[фото врача<br>поясной план,<br>светлый фон]</span></div>
+</div>
+
+<div class="cover vert v2" id="s2">
+ <div class="logo">100<b>med</b></div>
+ <div class="pill">Отзыв пациента</div>
+ <h1>Как прошёл мой приём</h1>
+ <div class="name"><div class="fio">Пономарёв [И. О.]</div><div class="spec">[специальность], 100med</div></div>
+ <div class="photo"><svg width="420" height="560" viewBox="0 0 420 560"><circle cx="210" cy="170" r="110" fill="#fff"/><path d="M10 560c0-140 90-230 200-230s200 90 200 230z" fill="#fff"/></svg><span>[фото врача<br>поясной план,<br>светлый фон]</span></div>
+</div>
+
+<div class="cover vert v3" id="s3">
+ <div class="logo">100<b>med</b></div>
+ <div class="quote">“</div>
+ <h1>Честно о приёме у врача</h1>
+ <div class="play"><svg width="30" height="34" viewBox="0 0 30 34"><path d="M2 2l26 15L2 32z" fill="#fff"/></svg></div>
+ <div class="playtxt">Видеоотзыв пациента</div>
+ <div class="name"><div class="fio">Пономарёв [И. О.]</div><div class="spec" style="color:#d8dfe8">[специальность], 100med</div></div>
+ <div class="photo"><svg width="420" height="560" viewBox="0 0 420 560"><circle cx="210" cy="170" r="110" fill="#fff"/><path d="M10 560c0-140 90-230 200-230s200 90 200 230z" fill="#fff"/></svg><span>[фото врача<br>поясной план,<br>светлый фон]</span></div>
+</div>
+</body></html>
