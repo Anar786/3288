@@ -8,10 +8,7 @@ body{font-family:'Proxima Nova','Montserrat',sans-serif;background:#fff}
 .logo{position:absolute;left:64px;top:52px;font-weight:700;font-size:40px;letter-spacing:-1px}
 .logo b{color:var(--rose)}
 .pill{display:inline-block;padding:12px 28px;border-radius:999px;font-weight:600;font-size:26px}
-.photo{position:absolute;right:0;bottom:0;width:520px;height:640px;border-radius:260px 260px 0 0;
- display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:24px;line-height:1.4}
-.photo svg{position:absolute;bottom:0;left:50%;transform:translateX(-50%);opacity:.35}
-.photo img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:92%}
+h1,.name,.pill,.logo,.play,.playtxt{z-index:3}
 h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
 .name{position:absolute;left:64px;bottom:64px}
 .name .fio{font-weight:700;font-size:34px;white-space:nowrap}
@@ -20,20 +17,17 @@ h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
 /* V1 Indy */
 .v1{background:var(--indy);color:#fff}
 .v1 .logo{color:#fff}
-.v1 .photo{background:var(--blue);color:var(--blue);right:40px}
 .v1 h1{position:absolute;left:64px;top:230px;width:640px;font-size:84px}
 .v1 .pill{position:absolute;left:64px;top:150px;background:#fff;color:var(--blue)}
 /* V2 light */
 .v2{background:var(--g2);color:var(--dark)}
 .v2 .logo{color:var(--dark)}
-.v2 .photo{background:var(--indy);color:#fff;right:40px}
 .v2 .pill{position:absolute;left:64px;top:150px;background:var(--rose);color:#fff}
 .v2 h1{position:absolute;left:64px;top:230px;width:640px;font-size:80px;color:var(--dark)}
 .v2 .name .spec{color:var(--blue)}
 /* V3 dark */
 .v3{background:var(--dark);color:#fff}
 .v3 .logo{color:#fff}
-.v3 .photo{background:var(--indy);color:#fff;right:40px}
 .v3 .quote{position:absolute;left:56px;top:120px;font-size:220px;font-weight:700;color:var(--indy);line-height:1}
 .v3 h1{position:absolute;left:64px;top:240px;width:660px;font-size:78px}
 .v3 .play{position:absolute;left:64px;top:450px;width:72px;height:72px;background:var(--rose)}
@@ -46,14 +40,35 @@ h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
 .vert h1{left:80px !important;top:480px !important;width:920px !important;font-size:104px !important}
 .vert .name{left:80px;top:880px;bottom:auto}
 .vert .name .fio{font-size:52px}.vert .name .spec{font-size:36px}
-.vert .photo{right:auto !important;left:140px;width:800px;height:920px;border-radius:400px 400px 0 0;font-size:34px}
-.vert .photo svg{width:620px;height:800px}
 .vert .quote{left:70px !important;top:370px !important;font-size:240px !important}
 .vert.v3 h1{top:610px !important}
 .vert .play{left:80px !important;top:900px !important;width:88px;height:88px}
 .vert .playtxt{left:190px !important;top:922px !important;font-size:36px}
 .vert.v3 .name{top:1030px}
-.vert.v3 .photo{height:740px}
+/* ===== Photo treatments (no arch) ===== */
+.photo{position:absolute}
+.photo img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);z-index:2}
+.deco{position:absolute;z-index:1}
+/* v1: freestanding cut-out with soft glow */
+.v1 .photo{right:10px;bottom:0;width:600px;height:690px}
+.v1 .photo img{height:100%}
+.v1 .deco{inset:0;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.45),rgba(255,255,255,0) 62%)}
+/* v2: card with head breaking out of the frame */
+.v2 .photo{right:56px;bottom:56px;width:500px;height:430px}
+.v2 .deco{inset:0;background:var(--indy);border-radius:40px}
+.v2 .photo img{height:600px;clip-path:inset(-60% 41px 0 41px)}
+/* v3: tilted pill behind the doctor */
+.v3 .photo{right:0;bottom:0;width:600px;height:690px}
+.v3 .photo img{height:100%}
+.v3 .deco{left:-40px;top:250px;width:680px;height:290px;border-radius:999px;background:var(--indy);transform:rotate(-14deg)}
+/* vertical */
+.vert.v1 .photo{left:60px;width:960px;height:920px}
+.vert.v1 .photo img{height:100%}
+.vert.v2 .photo{left:100px;right:auto;bottom:70px;width:880px;height:700px}
+.vert.v2 .photo img{height:850px;clip-path:none}
+.vert.v3 .photo{left:60px;width:960px;height:800px}
+.vert.v3 .photo img{height:100%}
+.vert.v3 .deco{left:-60px;top:250px;width:1080px;height:400px}
 </style></head><body>
 
 <div class="cover v1" id="v1">
@@ -61,7 +76,7 @@ h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
  <div class="pill">Видеоотзыв пациента</div>
  <h1>Почему я выбрала этого врача</h1>
  <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec">Травматолог-ортопед, 100med Люберцы</div></div>
- <div class="photo"><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
+ <div class="photo"><div class="deco"></div><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
 </div>
 
 <div class="cover v2" id="v2">
@@ -69,7 +84,7 @@ h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
  <div class="pill">Отзыв пациента</div>
  <h1>Как прошёл мой приём</h1>
  <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec">Травматолог-ортопед, 100med Люберцы</div></div>
- <div class="photo"><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
+ <div class="photo"><div class="deco"></div><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
 </div>
 
 <div class="cover v3" id="v3">
@@ -79,7 +94,7 @@ h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
  <div class="play"><svg width="30" height="34" viewBox="0 0 30 34"><path d="M2 2l26 15L2 32z" fill="#fff"/></svg></div>
  <div class="playtxt">Видеоотзыв пациента</div>
  <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec" style="color:#d8dfe8">Травматолог-ортопед, 100med Люберцы</div></div>
- <div class="photo"><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
+ <div class="photo"><div class="deco"></div><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
 </div>
 
 
@@ -88,7 +103,7 @@ h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
  <div class="pill">Видеоотзыв пациента</div>
  <h1>Почему я выбрала этого врача</h1>
  <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec">Травматолог-ортопед, 100med Люберцы</div></div>
- <div class="photo"><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
+ <div class="photo"><div class="deco"></div><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
 </div>
 
 <div class="cover vert v2" id="s2">
@@ -96,7 +111,7 @@ h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
  <div class="pill">Отзыв пациента</div>
  <h1>Как прошёл мой приём</h1>
  <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec">Травматолог-ортопед, 100med Люберцы</div></div>
- <div class="photo"><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
+ <div class="photo"><div class="deco"></div><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
 </div>
 
 <div class="cover vert v3" id="s3">
@@ -106,6 +121,6 @@ h1{font-weight:700;line-height:1.08;letter-spacing:-1.5px}
  <div class="play"><svg width="30" height="34" viewBox="0 0 30 34"><path d="M2 2l26 15L2 32z" fill="#fff"/></svg></div>
  <div class="playtxt">Видеоотзыв пациента</div>
  <div class="name"><div class="fio">Пономарев Тимофей Викторович</div><div class="spec" style="color:#d8dfe8">Травматолог-ортопед, 100med Люберцы</div></div>
- <div class="photo"><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
+ <div class="photo"><div class="deco"></div><img src="ponomarev.png" alt="Пономарев Тимофей Викторович"></div>
 </div>
 </body></html>
